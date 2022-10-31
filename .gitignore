@@ -1,0 +1,13 @@
+/node_modules
+.env
+.env.backup
+.phpunit.result.cache
+/.idea
+/.vscode
+.htaccess
+public/.htaccess
+.user.ini
+php.ini
+sitemap.xml
+composer.lock
+error_log
