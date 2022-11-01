@@ -1493,3 +1493,7 @@ A VERTICAL event
   background-color: var(--bs-gray-200);
 }
 
+.main-wrap {
+    max-width: 1920px;
+    margin: 0 auto;
+}
