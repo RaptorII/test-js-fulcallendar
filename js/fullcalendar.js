@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     vendor_object.title = get_all_vendor[i].Vendor_Name;
                     vendor_list.push(vendor_object)
                 }
-                console.log(vendor_list);
+                console.log('vendor_list: ' + vendor_list);
                 // error_log("Employee_list:"+employee_list);
             })
     })
