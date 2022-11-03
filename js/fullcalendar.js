@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', async function () {
     console.log('start input');
 
+    calendarEl = document.getElementById('calendar');
+
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         // initialDate: '2022-08-07',
