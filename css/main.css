@@ -1496,4 +1496,5 @@ A VERTICAL event
 .main-wrap {
     max-width: 1920px;
     margin: 50px auto;
+    display: flex;
 }
