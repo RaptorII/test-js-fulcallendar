@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('start input');
 
     calendarEl = document.getElementById('calendar');
