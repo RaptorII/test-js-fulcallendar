@@ -65,8 +65,25 @@ document.addEventListener('DOMContentLoaded', function () {
     calendar.render();
 
 
-    ZOHO.embeddedApp.on("PageLoad",function(data){
-        console.log('data= '+data);
+    ZOHO.embeddedApp.on("PageLoad",async function(data){
+        // console.log('data= '+data);
+
+        var vendor_list = [];
+        var jobsheet_list = [];
+        await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
+            .then(async function (vendor_detail) {
+                console.log("Employee Record");
+                console.log(vendor_detail.data);
+                var get_all_vendor = vendor_detail.data;
+                for (var i = 0, l = get_all_vendor.length; i < l; i++) {
+                    var vendor_object = new Object();
+                    vendor_object.id = get_all_vendor[i].id;
+                    vendor_object.title = get_all_vendor[i].Vendor_Name;
+                    vendor_list.push(vendor_object)
+                }
+                console.log(vendor_list);
+                // error_log("Employee_list:"+employee_list);
+            })
     })
     ZOHO.embeddedApp.init();
 })
