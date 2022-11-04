@@ -104,8 +104,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let selectpickerItems = document.getElementsByClassName('selectpicker__item');
 
-    selectpickerItems.onClick( function(){
-        console.log('qwerty= ' + this.value );
-    });
+    selectpickerItems.onClick = function(){
+        console.log('qwerty= ' + this.data() );
+    };
 
 })
