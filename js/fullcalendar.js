@@ -102,10 +102,11 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     ZOHO.embeddedApp.init();
 
-    let selectpickerItems = document.getElementsByClassName('selectpicker__item');
+    // let selectpickerItems = document.getElementsByClassName('selectpicker__item');
 
-    selectpickerItems.click = function(){
-        console.log('qwerty= ' + this.data() );
+    document.getElementsByClassName('selectpicker__item').onClick = function(e){
+        // console.log('qwerty= ' + this.data() );
+        console.log('qwerty= ' + e );
     };
 
 })
