@@ -99,10 +99,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 // $('.selectpicker').selectpicker('refresh');
 
             })
-
-
     })
     ZOHO.embeddedApp.init();
 
+    let selectpickerItems = document.getElementsByClassName('selectpicker__item');
+
+    selectpickerItems.onClick( function(){
+        console.log('qwerty= ' + this.value );
+    });
 
 })
