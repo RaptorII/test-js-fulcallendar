@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // $('.selectpicker').selectpicker('refresh');
 
             })
+        getIDbyClickOnVendor().then(r => 'notfound');
     })
     ZOHO.embeddedApp.init();
 
@@ -112,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-    getIDbyClickOnVendor().then(r => 'notfound');
+
 
 
     // [].forEach.call(selectpickerItems,function(el){
