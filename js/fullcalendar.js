@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-    getIDbyClickOnVendor().then(r => 0);
+    getIDbyClickOnVendor().then(r => 'notfound');
 
 
     // [].forEach.call(selectpickerItems,function(el){
