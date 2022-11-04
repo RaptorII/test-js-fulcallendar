@@ -1498,3 +1498,9 @@ A VERTICAL event
     margin: 50px auto;
     display: flex;
 }
+
+#calendar {
+    display: flex;
+    flex: 1 1 auto;
+    height: 100%;
+}
