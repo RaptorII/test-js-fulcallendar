@@ -102,13 +102,17 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     ZOHO.embeddedApp.init();
 
-    let selectpickerItems = document.getElementsByClassName('selectpicker__item');
+    async function getIDbyClickOnVendor() {
+        let selectpickerItems = document.getElementsByClassName('selectpicker__item');
 
-    for (let i = 0; i < selectpickerItems.length; i++) {
-        selectpickerItems[i].addEventListener('click', function () {
-            console.log('qwerty= ' + JSON.stringify( this.getAttribute('data-id') ) );
-        });
+        for (let i = 0; i < selectpickerItems.length; i++) {
+            selectpickerItems[i].addEventListener('click', function () {
+                console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
+                return this.getAttribute('data-id');
+            });
+        }
     }
+    getIDbyClickOnVendor().then(r => 0);
 
 
     // [].forEach.call(selectpickerItems,function(el){
