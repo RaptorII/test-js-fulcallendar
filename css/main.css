@@ -1504,3 +1504,7 @@ A VERTICAL event
     flex: 1 1 auto;
     height: 100%;
 }
+
+#vendor-list {
+    display: flex;
+}

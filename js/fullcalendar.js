@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
                 title: 'Long Event',
-                start: '2022-08-07',
-                end: '2022-08-10'
+                start: '2022-11-07',
+                end: '2022-11-10'
             },
             {
                 groupId: '999',
                 title: 'Repeating Event',
-                start: '2022-08-09T16:00:00'
+                start: '2022-11-09T16:00:00'
             },
             {
                 groupId: '999',
@@ -81,10 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     vendor_object.title = get_all_vendor[i].Vendor_Name;
                     vendor_list.push(vendor_object);
                 }
-                console.log('vendor_list: ' +  JSON.stringify(vendor_list));
+                // console.log('vendor_list: ' +  JSON.stringify(vendor_list));
 
-                // error_log("Employee_list:"+employee_list);
-
+                // list of vendors
                 let elm = document.getElementById('employee_option');
                 let  df = document.createDocumentFragment(); // create a document fragment to hold the options while we create them
                 for (let i = 0, l = vendor_list.length; i < l; i++) {
