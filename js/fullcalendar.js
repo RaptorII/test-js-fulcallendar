@@ -104,13 +104,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let selectpickerItems = document.getElementsByClassName('selectpicker__item');
 
-    document.onClick = function(e){
-        // console.log('qwerty= ' + this.data() );
-        console.log('qwerty= ' + this.e );
-    };
+    for (let i = 0; i < selectpickerItems.length; i++) {
+        selectpickerItems[i].addEventListener('click', function () {
+            console.log('qwerty= ' + JSON.stringify( this.getAttribute('data-id') ) );
+        });
+    }
 
-    // document.addEventListener('click',e => {
-    //     console.log('qwerty= ');
-    // })
+
+    // [].forEach.call(selectpickerItems,function(el){
+    //     el.addEventListener('click', function (e) {
+    //         console.log('qwerty= ' + JSON.stringify( this.getAttribute('data-id') ) );
+    //     })
+    // });
 
 })
