@@ -1510,5 +1510,11 @@ A VERTICAL event
 }
 
 .selectpicker__item {
-    padding: 10px;
+    padding: 2px 10px;
+    border: 1px solid darkgrey;
+    margin: 1px 20px 1px;
+}
+.selectpicker__item:hover {
+    cursor: pointer;
+    background: #cccccc;
 }
