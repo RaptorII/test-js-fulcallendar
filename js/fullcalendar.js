@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 let elm = document.getElementById('employee_option');
                 let  df = document.createDocumentFragment(); // create a document fragment to hold the options while we create them
                 for (let i = 0, l = vendor_list.length; i < l; i++) {
-                    var option = document.createElement('div'); // create the option element
+                    var option = document.createElement('div class="selectpicker__item"'); // create the option element
                     option.value = vendor_list[i].id; // set the value property
                     option.appendChild(document.createTextNode(vendor_list[i].title)); // set the textContent in a safe way.
                     df.appendChild(option); // append the option to the document fragment
