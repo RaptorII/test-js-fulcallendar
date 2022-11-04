@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementsByClassName('selectpicker__item').onClick = function(e){
         // console.log('qwerty= ' + this.data() );
-        console.log('qwerty= ' + e );
+        console.log('qwerty= ');
     };
 
 })
