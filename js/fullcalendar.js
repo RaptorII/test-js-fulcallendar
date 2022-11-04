@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('vendor_list: ' +  JSON.stringify(vendor_list));
 
                 // error_log("Employee_list:"+employee_list);
-/*
+
                 let elm = document.getElementById('employee_option');
                 let  df = document.createDocumentFragment(); // create a document fragment to hold the options while we create them
                 for (let i = 0, l = vendor_list.length; i < l; i++) {
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 elm.appendChild(df); // append the document fragment to the DOM. this is the better way rather than setting innerHTML a bunch of times (or even once with a long string)
                 // Example call of 'refresh'
                 // $('.selectpicker').selectpicker('refresh');
- */
+
             })
 
 
