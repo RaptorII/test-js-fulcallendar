@@ -1508,3 +1508,7 @@ A VERTICAL event
 #vendor-list {
     display: flex;
 }
+
+.selectpicker__item {
+    padding: 10px;
+}
