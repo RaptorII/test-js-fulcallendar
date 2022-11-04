@@ -1518,3 +1518,11 @@ A VERTICAL event
     cursor: pointer;
     background: #cccccc;
 }
+
+.selectpicker__head {
+    padding: 5px 10px;
+    border: 1px solid darkgrey;
+    margin: 1px 20px 1px;
+    text-transform: uppercase;
+    background: #cccccc;
+}
