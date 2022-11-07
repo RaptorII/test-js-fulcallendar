@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // calendar.render();
 
                 // ZOHO.CRM.API.searchRecord({Entity:"Sales_Orders", Type:"Vendor.id",Query: this.getAttribute('data-id')})
-                ZOHO.CRM.API.searchRecord({Entity:"Sales_Orders", criteria: "Vendors3", Query: "Acosta Painting LLC (Denis)"})
+                ZOHO.CRM.API.searchRecord({Entity:"Sales_Orders", Type:"criteria", Query: this.getAttribute('data-id')})
                     .then(function(data){
                         console.log('data= ' + data)
                     })
