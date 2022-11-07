@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // console.log(calendarEl);
 
-                calendar.events = [
+                calendar.events : [
                     {
                         title: 'Click for Google',
                         url: 'http://google.com/',
