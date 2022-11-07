@@ -110,7 +110,9 @@ document.addEventListener('DOMContentLoaded', function () {
             selectpickerItems[i].addEventListener('click', function () {
                  console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
 
-                this.classList.add("selected__item");
+
+                // !this.classList.remove("selected__item");
+                this.classList.toggle("selected__item");
 
 /*                calendar.addEvent({
                     title: this.getAttribute('data-id'),
