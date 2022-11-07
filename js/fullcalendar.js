@@ -134,7 +134,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     })
                     .then(function(dataZ){
                         // console.log('dataZ= ' + JSON.stringify(dataZ));
+
+                        dataZ = dataZ.data;
                         console.log('dataZ length= ' + JSON.stringify(dataZ.length));
+
                         for (let i = 0, l = dataZ.length; i < l; i++) {
                             console.log('dataZ[' + i + ']= ' + dataZ[i].Jobsheet.id);
                         }
