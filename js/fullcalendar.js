@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (dataZ.length) {
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
-                            for (let i = 0, l = dataZ.length; i < l; i++) {
+                            for (let i = 0; i < dataZ.length; i++) {
                                 console.log('dataZ[' + i + ']= ' + dataZ[i].Jobsheet.id);
                                 ZOHO.CRM.API.searchRecord({
                                     Entity: "Sales_Orders",
@@ -148,9 +148,16 @@ document.addEventListener('DOMContentLoaded', function () {
                                 .then(function(dataZC){
                                     dataZC = dataZC?.data[0];
 
-                                    console.log('dataZC= ' + JSON.stringify(dataZC) );
+                                    console.log('i= ' + i );
+                                    // console.log('dataZC= ' + JSON.stringify(dataZC) );
                                     console.log('dataZC_S= ' + dataZC?.Start_Date );
                                     console.log('dataZC_E= ' + dataZC?.End_Date );
+
+                                    calendar.addEvent({
+                                        id: dataZ[i].Jobsheet.id,
+                                        start: dataZC?.Start_Date,
+                                        end: dataZC?.End_Date
+                                    });
 
                                 });
 
