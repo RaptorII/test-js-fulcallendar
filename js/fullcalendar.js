@@ -110,28 +110,15 @@ document.addEventListener('DOMContentLoaded', function () {
             selectpickerItems[i].addEventListener('click', function () {
                  console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
 
-                // console.log(calendarEl);
-
-
-                calendar.addEvent({
+/*                calendar.addEvent({
                     title: this.getAttribute('data-id'),
                     start: '2022-11-28',
                     allDay: true
-                });
+                });*/
 
-                calendar.events = [
-                    {
-                        title: 'Click for Google',
-                        url: 'http://google.com/',
-                        start: '2022-11-28'
-                    },
-                    {
-                        title: 'Click for Google',
-                        url: 'http://google.com/',
-                        start: '2022-11-15'
-                    }
-                ];
-                calendar.render();
+                // calendar.render();
+
+
 
                 return this.getAttribute('data-id');
             });
