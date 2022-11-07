@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
         events: [
-            {
+            /*{
                 title: 'All Day Event',
                 start: '2022-08-01'
             },
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 title: 'Click for Google',
                 url: 'http://google.com/',
                 start: '2022-08-28'
-            }
+            }*/
         ]
 
     });
@@ -109,18 +109,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (let i = 0; i < selectpickerItems.length; i++) {
             selectpickerItems[i].addEventListener('click', function () {
-                console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
-
+                // console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
 
                 for (let i = 0; i < selectpickerItems.length; i++) { selectpickerItems[i].classList.remove("selected__item"); } // clear
                 this.classList.add("selected__item"); // select item
-
-/*                calendar.addEvent({
-                    title: this.getAttribute('data-id'),
-                    start: '2022-11-28',
-                    allDay: true
-                });*/
-                // calendar.render();
 
                 // let qweryStr = `SELECT id, Start_Date, End_Date FROM Sales_Orders WHERE Vendor = this.getAttribute('data-id');`;
 
