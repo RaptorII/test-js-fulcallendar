@@ -107,10 +107,13 @@ document.addEventListener('DOMContentLoaded', function () {
         let selectpickerItems = document.getElementsByClassName('selectpicker__item');
 
         for (let i = 0; i < selectpickerItems.length; i++) {
-            selectpickerItems[i].classList.remove("selected__item");
             selectpickerItems[i].addEventListener('click', function () {
-                 console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
+                console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
 
+
+                for (let i = 0; i < selectpickerItems.length; i++) {
+                    selectpickerItems[i].classList.remove("selected__item");
+                }
                 this.classList.add("selected__item");
 
 /*                calendar.addEvent({
