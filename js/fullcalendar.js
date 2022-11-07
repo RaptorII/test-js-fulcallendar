@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('start input');
 
     // calendar
-    calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+    let calendarEl = document.getElementById('calendar');
+    let calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         // initialDate: '2022-08-07',
         selectable: true,
@@ -108,7 +108,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (let i = 0; i < selectpickerItems.length; i++) {
             selectpickerItems[i].addEventListener('click', function () {
-                console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
+                // console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
+
+                // console.log(calendarEl);
+
+                calendar.events = [
+                    {
+                        title: 'Click for Google',
+                        url: 'http://google.com/',
+                        start: '2022-11-28'
+                    },
+                    {
+                        title: 'Click for Google',
+                        url: 'http://google.com/',
+                        start: '2022-11-15'
+                    },
+                ];
+
                 return this.getAttribute('data-id');
             });
         }
