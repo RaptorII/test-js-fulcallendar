@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     Query: "(id:equals:" + dataZ[i].Jobsheet.id + ")"
                                 })
                                 .then(function(dataZC){
-                                    dataZC = dataZC.data[0];
+                                    dataZC = dataZC?.data[0];
 
                                     console.log('dataZC= ' + JSON.stringify(dataZC) );
                                     console.log('dataZC_S= ' + dataZC?.Start_Date );
