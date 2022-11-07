@@ -147,10 +147,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                 })
                                 .then(function(dataZC){
                                     dataZC = dataZC.data;
-                                    if (dataZC.length) {
-                                        console.log('dataZC length= ' + dataZC.length );
+                                    console.log('dataZC_S= ' + dataZC.Start_Date );
+                                    console.log('dataZC_E= ' + dataZC.End_Date );
 
-                                    }
                                 });
 
 
