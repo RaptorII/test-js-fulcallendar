@@ -112,6 +112,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // console.log(calendarEl);
 
+
+                calendar.addEvent({
+                    title: "this.getAttribute('data-id'))",
+                    start: '2022-11-28',
+                    allDay: true
+                });
+
                 calendar.events = [
                     {
                         title: 'Click for Google',
