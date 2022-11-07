@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // console.log(calendarEl);
 
-                calendar.events : [
+                calendar.events = [
                     {
                         title: 'Click for Google',
                         url: 'http://google.com/',
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         title: 'Click for Google',
                         url: 'http://google.com/',
                         start: '2022-11-15'
-                    },
+                    }
                 ];
 
                 return this.getAttribute('data-id');
