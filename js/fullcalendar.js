@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
                 calendar.addEvent({
-                    title: this.getAttribute('data-id')),
+                    title: this.getAttribute('data-id'),
                     start: '2022-11-28',
                     allDay: true
                 });
