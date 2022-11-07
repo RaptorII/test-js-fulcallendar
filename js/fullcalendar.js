@@ -121,8 +121,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 });*/
                 // calendar.render();
 
-                // ZOHO.CRM.API.searchRecord({Entity:"Sales_Orders", Type:"Vendor.id",Query: this.getAttribute('data-id')})
-                ZOHO.CRM.API.searchRecord({Entity:"Sales_Orders", Type:"criteria", Query: this.getAttribute('data-id')})
+                let qryStr = `SELECT * FROM Sales_Orders WHERE Vendor = this.getAttribute('data-id');`;
+
+                ZOHO.CRM.API.searchRecord({
+                        Entity:"Sales_Orders",
+                        Type:"criteria",
+                        Query: qryStr
+                    })
                     .then(function(data){
                         console.log('data= ' + data)
                     })
