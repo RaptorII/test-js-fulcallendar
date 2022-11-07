@@ -1528,3 +1528,7 @@ A VERTICAL event
     text-transform: uppercase;
     background: #cccccc;
 }
+
+.selected__item {
+    font-weight: bold;
+}
