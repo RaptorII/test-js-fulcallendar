@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         start: '2022-11-15'
                     }
                 ];
+                calendar.render();
 
                 return this.getAttribute('data-id');
             });
