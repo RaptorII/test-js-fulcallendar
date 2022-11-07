@@ -125,14 +125,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 let qveryStr = "(Vendor:equals:" + this.getAttribute('data-id') + ")";
                 console.log(qveryStr);
 
-                ZOHO.CRM.API.searchRecord({
+                let dataZ = ZOHO.CRM.API.searchRecord({
                         Entity:"Sales_Orders",
                         Type:"criteria",
                         Query: qveryStr
                     })
                     .then(function(data){
                         console.log('data= ' + JSON.stringify(data));
-                    })
+                    });
+                console.log("dataZ= " + dataZ);
 
 
                 return this.getAttribute('data-id');
