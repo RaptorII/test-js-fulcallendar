@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     option.className = "selectpicker__item";
                     // option.value = vendor_list[i].id; // set the value property
                     option.setAttribute("data-id", vendor_list[i].id);
+                    option.setAttribute("data-name", vendor_list[i].title);
                     option.appendChild(document.createTextNode(vendor_list[i].title)); // set the textContent in a safe way.
                     df.appendChild(option); // append the option to the document fragment
                 }
@@ -122,7 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 // calendar.render();
 
                 // let qweryStr = `SELECT id, Start_Date, End_Date FROM Sales_Orders WHERE Vendor = this.getAttribute('data-id');`;
-                let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
+                // let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
+                let qveryStr = "(Vendor:equals:" + this.getAttribute('data-name') + ")";
                 console.log(qveryStr);
 
                 ZOHO.CRM.API.searchRecord({
