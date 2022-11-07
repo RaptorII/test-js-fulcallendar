@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (let i = 0; i < selectpickerItems.length; i++) {
             selectpickerItems[i].addEventListener('click', function () {
-                // console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
+                 console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
 
                 // console.log(calendarEl);
 
