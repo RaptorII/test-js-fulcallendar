@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // $('.selectpicker').selectpicker('refresh');
 
             })
-        getIDbyClickOnVendor().then(r => 'notfound');
+        await getIDbyClickOnVendor().then(r => 'notfound');
     })
     ZOHO.embeddedApp.init();
 
