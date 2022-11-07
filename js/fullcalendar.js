@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
                  console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
 
 
-                !this.classList.remove("selected__item");
+                this.classList.remove("selected__item");
                 this.classList.add("selected__item");
 
 /*                calendar.addEvent({
