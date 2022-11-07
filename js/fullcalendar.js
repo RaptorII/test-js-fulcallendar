@@ -121,12 +121,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 });*/
                 // calendar.render();
 
-                let qweryStr = `SELECT id, Start_Date, End_Date FROM Sales_Orders WHERE Vendor = this.getAttribute('data-id');`;
+                // let qweryStr = `SELECT id, Start_Date, End_Date FROM Sales_Orders WHERE Vendor = this.getAttribute('data-id');`;
+                let qveryStr = "( Vendor:equals:" + this.getAttribute('data-id') + " )";
 
                 ZOHO.CRM.API.searchRecord({
                         Entity:"Sales_Orders",
                         Type:"criteria",
-                        Query: qweryStr
+                        Query: qveryStr
                     })
                     .then(function(data){
                         console.log('data= ' + data)
