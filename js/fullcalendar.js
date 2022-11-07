@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     .then(function(data){
                         console.log('data= ' + JSON.stringify(data));
                     });
-                console.log("dataZ= " + dataZ);
+                console.log("dataZ= " + JSON.stringify(dataZ));
 
 
                 return this.getAttribute('data-id');
