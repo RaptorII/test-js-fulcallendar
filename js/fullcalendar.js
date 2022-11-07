@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
                             for (let i = 0, l = dataZ.length; i < l; i++) {
-                                // console.log('dataZ[' + i + ']= ' + dataZ[i].Jobsheet.id);
+                                console.log('dataZ[' + i + ']= ' + dataZ[i].Jobsheet.id);
                                 ZOHO.CRM.API.searchRecord({
                                     Entity: "Sales_Orders",
                                     Type: "criteria",
