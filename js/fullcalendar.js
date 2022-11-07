@@ -133,13 +133,28 @@ document.addEventListener('DOMContentLoaded', function () {
                         Query: qveryStr
                     })
                     .then(function(dataZ){
-                        // console.log('dataZ= ' + JSON.stringify(dataZ));
 
                         dataZ = dataZ.data;
-                        console.log('dataZ length= ' + JSON.stringify(dataZ.length));
+                        if (dataZ.length) {
+                            // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
-                        for (let i = 0, l = dataZ.length; i < l; i++) {
-                            console.log('dataZ[' + i + ']= ' + dataZ[i].Jobsheet.id);
+                            for (let i = 0, l = dataZ.length; i < l; i++) {
+                                // console.log('dataZ[' + i + ']= ' + dataZ[i].Jobsheet.id);
+                                ZOHO.CRM.API.searchRecord({
+                                    Entity: "Sales_Orders",
+                                    Type: "criteria",
+                                    Query: "(id:equals:" + dataZ[i].Jobsheet.id + ")"
+                                })
+                                .then(function(dataZC){
+                                    dataZC = dataZC.data;
+                                    if (dataZC.length) {
+                                        console.log('dataZC length= ' + dataZC.length );
+
+                                    }
+                                });
+
+
+                            }
                         }
                     });
 
