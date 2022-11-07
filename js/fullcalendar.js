@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // let qweryStr = `SELECT id, Start_Date, End_Date FROM Sales_Orders WHERE Vendor = this.getAttribute('data-id');`;
                 // let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
-                let qveryStr = "(Vendor:" + this.getAttribute('data-name') + ")";
+                let qveryStr = this.getAttribute('data-name');
                 console.log(qveryStr);
 
                 ZOHO.CRM.API.searchRecord({
