@@ -111,19 +111,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('qwerty= ' + JSON.stringify(this.getAttribute('data-id')));
 
 
-                for (let i = 0; i < selectpickerItems.length; i++) {
-                    selectpickerItems[i].classList.remove("selected__item");
-                }
-                this.classList.add("selected__item");
+                for (let i = 0; i < selectpickerItems.length; i++) { selectpickerItems[i].classList.remove("selected__item"); } // clear
+                this.classList.add("selected__item"); // select item
 
 /*                calendar.addEvent({
                     title: this.getAttribute('data-id'),
                     start: '2022-11-28',
                     allDay: true
                 });*/
-
                 // calendar.render();
 
+                ZOHO.CRM.API.searchRecord({Entity:"Sales_Orders", Type:"Vendor",Query: this.getAttribute('data-id')})
+                    .then(function(data){
+                        console.log('data= ' + data)
+                    })
 
 
                 return this.getAttribute('data-id');
