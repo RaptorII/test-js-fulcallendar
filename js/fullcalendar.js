@@ -147,8 +147,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                 })
                                 .then(function(dataZC){
                                     dataZC = dataZC.data;
-                                    console.log('dataZC_S= ' + dataZC.Start_Date );
-                                    console.log('dataZC_E= ' + dataZC.End_Date );
+
+                                    console.log('dataZC= ' + dataZC );
+                                    console.log('dataZC_S= ' + dataZC?.Start_Date );
+                                    console.log('dataZC_E= ' + dataZC?.End_Date );
 
                                 });
 
