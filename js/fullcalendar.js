@@ -133,7 +133,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         Query: qveryStr
                     })
                     .then(function(dataZ){
-                        console.log('dataZ= ' + JSON.stringify(dataZ));
+                        // console.log('dataZ= ' + JSON.stringify(dataZ));
+                        for (let i = 0, l = data.length; i < l; i++) {
+                            console.log('data[' + i + ']= ' + data[i].Jobsheet.id);
+                        }
                     });
 
 
