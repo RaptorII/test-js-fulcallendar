@@ -113,6 +113,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 for (let i = 0; i < selectpickerItems.length; i++) { selectpickerItems[i].classList.remove("selected__item"); } // clear
                 this.classList.add("selected__item"); // select item
+
+                calendar.destroy();
                 calendar.render();
 
                 let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
