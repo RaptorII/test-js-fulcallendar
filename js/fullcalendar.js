@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ]
 
     });
-    calendar.render();
+    //calendar.render();
 
     ZOHO.embeddedApp.on("PageLoad",async function(data){
         // console.log('data= '+data);
@@ -114,7 +114,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 for (let i = 0; i < selectpickerItems.length; i++) { selectpickerItems[i].classList.remove("selected__item"); } // clear
                 this.classList.add("selected__item"); // select item
 
-                calendar.reset();
+                calendar.destroy();
+                calendar.render();
 
 
                 let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
