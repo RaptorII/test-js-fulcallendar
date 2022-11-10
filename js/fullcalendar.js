@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     calendar.render();
                 }*/
                 // calendar.refetchEvents();
-                FullCalendar('rerenderEvents');
+                calendar.FullCalendar('rerenderEvents');
 
                 let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
                 console.log(qveryStr);
