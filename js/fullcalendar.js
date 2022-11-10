@@ -115,9 +115,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.classList.add("selected__item"); // select item
 
                 if (calendar) {
-                    calendar.refetchEvents();
+                    window.calendar.destroy();
                 }
-                // calendar.render();
+                calendar.render();
 
                 let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
                 console.log(qveryStr);
