@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                                     calendar.addEvent({
                                         id: dataZ[i].Jobsheet.id,
-                                        title: '',
+                                        title: dataZC?.Subject,
                                         start: dataZC?.Start_Date,
                                         end: dataZC?.End_Date,
                                         allDay: false
