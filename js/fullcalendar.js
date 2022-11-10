@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.classList.add("selected__item"); // select item
 
                 if (calendar) {
-                    calendar.destroy();
+                    // calendar.destroy();
                     calendar.events = '';
                 }
                 calendar.refetchEvents();
