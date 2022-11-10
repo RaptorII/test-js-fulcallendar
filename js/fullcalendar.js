@@ -67,12 +67,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 for (let i = 0; i < selectpickerItems.length; i++) { selectpickerItems[i].classList.remove("selected__item"); } // clear
                 this.classList.add("selected__item"); // select item
 
-                if (calendar) {
+    /*            if (calendar) {
                     calendar.destroy();
-                    calendar.events = '';
+                    calendar.events = [];
+
                     calendar.render();
-                }
-                calendar.refetchEvents();
+                }*/
+                // calendar.refetchEvents();
+                FullCalendar('rerenderEvents');
 
                 let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
                 console.log(qveryStr);
