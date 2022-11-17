@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let calendarEl = document.getElementById('calendar');
     let calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
-        initialDate: '2022-08-07',
+        // initialDate: '2022-08-07',
         selectable: true,
         editable: true,
         headerToolbar: {
