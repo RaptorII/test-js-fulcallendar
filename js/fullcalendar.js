@@ -62,12 +62,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     calendar.render();
 
-    ZOHO.embeddedApp.on("PageLoad",async function(data){
+    ZOHO.embeddedApp.on("PageLoad", function(data){
         // console.log('data= '+data);
 
         var vendor_list = [];
         // var jobsheet_list = [];
-        await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
+         ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
             .then(async function (vendor_detail) {
                 // console.log("Employee Record");
                 // console.log(vendor_detail.data);
@@ -97,11 +97,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 // $('.selectpicker').selectpicker('refresh');
 
             })
-        await getIDbyClickOnVendor().then(r => 'notfound');
+         getIDbyClickOnVendor().then(r => 'notfound');
     })
     ZOHO.embeddedApp.init();
 
-    async function getIDbyClickOnVendor() {
+     function getIDbyClickOnVendor() {
         let selectpickerItems = document.getElementsByClassName('selectpicker__item');
 
         for (let i = 0; i < selectpickerItems.length; i++) {
