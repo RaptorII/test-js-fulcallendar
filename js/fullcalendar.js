@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let calendarEl = document.getElementById('calendar');
     let calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
-        // initialDate: '2022-08-07',
+        initialDate: '2022-08-07',
         selectable: true,
         editable: true,
         headerToolbar: {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
         events: [
-            /*{
+            {
                title: 'All Day Event',
                start: '2022-08-01'
             },
@@ -37,16 +37,26 @@ document.addEventListener('DOMContentLoaded', function () {
                title: 'Conference',
                start: '2022-08-11',
                end: '2022-08-13'
-            }*/
+            }
         ],
-        droppable: true,
-        drop: function(start, end, allDay) {
-
+        // droppable: true,
+        // drop: function(start, end, allDay) {
+        //
+        //     console.clear();
+        //     console.log("dropped");
+        //     console.log(start.format());
+        //     console.log(end.format());
+        //     console.log(allDay.format());
+        // }
+        eventDrop: function (/* event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view */) {
+            // handle all internal drops (or 'moves').
             console.clear();
             console.log("dropped");
-            console.log(start.format());
-            console.log(end.format());
-            console.log(allDay.format());
+        },
+        eventResize: function (/* event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view */) {
+            // handle all resizing events (i.e. changing an events duration)
+            console.clear();
+            console.log("resize");
         }
 
     });
