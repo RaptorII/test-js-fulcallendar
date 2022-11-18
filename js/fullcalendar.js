@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
                end: '2022-08-13'
             }*/
         ],
+        droppable: true,
         drop: function(start, end, allDay) {
 
             console.clear();
