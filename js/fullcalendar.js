@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("dropped");
             // console.log("eventData" + JSON.stringify(eventData));
 
-            console.log(eventData.event.title + " end is now " + eventData.event.end.toISOString());
+            console.log(eventData.event.title + " end is now " + eventData.event.end.toLocaleDateString('en-US'));
 
             // to Zoho
             let eventUpdate = {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 APIData:{
                     "id": eventData.event.id,
                     "Subject": eventData.event.title,
-                    "Start_Date": eventData.event.start,
+                    "Start_Date": eventData.event.start.toLocaleDateString('en-US'),
                     "End_Date": eventData.event.end,
                 }
             }
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("resize");
             // console.log("eventData" + JSON.stringify(eventData));
 
-            console.log(eventData.event.title + " end is now " + eventData.event.end);
+            console.log(eventData.event.title + " end is now " + eventData.event.end.toLocaleDateString('en-US'));
 
             // to Zoho
             let eventUpdate = {
@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 APIData:{
                     "id": eventData.event.id,
                     "Subject": eventData.event.title,
-                    "Start_Date": eventData.event.start,
-                    "End_Date": eventData.event.end,
+                    "Start_Date": eventData.event.start.toLocaleDateString('en-US'),
+                    "End_Date": eventData.event.end.toLocaleDateString('en-US'),
                 }
             }
             ZOHO.CRM.API.updateRecord(eventUpdate)
