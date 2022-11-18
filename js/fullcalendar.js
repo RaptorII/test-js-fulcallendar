@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var vendor_list = [];
         // var jobsheet_list = [];
-         ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
+         await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
             .then(async function (vendor_detail) {
                 // console.log("Employee Record");
                 // console.log(vendor_detail.data);
