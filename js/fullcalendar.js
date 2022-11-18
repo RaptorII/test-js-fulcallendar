@@ -43,12 +43,16 @@ document.addEventListener('DOMContentLoaded', function () {
             // handle all internal drops (or 'moves').
             console.clear();
             console.log("dropped");
+            console.log("eventData" + eventData);
+
             console.log(eventData.event.title + " end is now " + eventData.event.end.toISOString());
         },
         eventResize: function ( eventData ) { /// event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view
             // handle all resizing events (i.e. changing an events duration)
             console.clear();
             console.log("resize");
+            console.log("eventData" + eventData);
+
             console.log(eventData.event.title + " end is now " + eventData.event.end.toISOString());
 
         }
