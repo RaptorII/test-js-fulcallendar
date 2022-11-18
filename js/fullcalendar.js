@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
         events: [
-            {
+            /*{
                title: 'All Day Event',
                start: '2022-08-01'
             },
@@ -37,17 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
                title: 'Conference',
                start: '2022-08-11',
                end: '2022-08-13'
-            }
+            }*/
         ],
-        // droppable: true,
-        // drop: function(start, end, allDay) {
-        //
-        //     console.clear();
-        //     console.log("dropped");
-        //     console.log(start.format());
-        //     console.log(end.format());
-        //     console.log(allDay.format());
-        // }
         eventDrop: function (/* event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view */) {
             // handle all internal drops (or 'moves').
             console.clear();
