@@ -137,12 +137,24 @@ document.addEventListener('DOMContentLoaded', function () {
                                     //     });
                                     // });
 
+                                    // var eventObject = {
+                                    //     title: displayText,
+                                    //     start: item.startDate,
+                                    //     end : item.endDate,
+                                    //     allDay:true,
+                                    //     color: '#BABBBF',
+                                    //     editable : false,
+                                    //     className : "user_block"
+                                    // };
+                                    // calendar.fullCalendar('renderEvent', eventObject, true);
+
+
                                     calendar.addEvent({
                                         id: dataZ[i].Jobsheet.id,
                                         title: dataZC?.Subject,
                                         start: dataZC?.Start_Date,
                                         end: dataZC?.End_Date,
-                                        // allDay: false, // if on destroi editable
+                                        // allDay: false, // if option is 'on' then destroi editable
                                         editable: true
                                     });
 
