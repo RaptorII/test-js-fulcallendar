@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                             start: dataZC?.Start_Date,
                                             end: dataZC?.End_Date,
                                             editable: true,
-                                            // allDay: false,
+                                            allDay: false,
                                         });
                                     });
 
