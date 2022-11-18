@@ -46,6 +46,21 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("eventData" + JSON.stringify(eventData));
 
             console.log(eventData.event.title + " end is now " + eventData.event.end.toISOString());
+
+            // to Zoho
+            let eventUpdate={
+                Entity:"Leads",
+                APIData:{
+                    "id": eventData.event.id,
+                    "Subject": eventData.event.title,
+                    "Start_Date": eventData.event.start.toISOString(),
+                    "End_Date": eventData.event.end.toISOString(),
+                }
+            }
+            ZOHO.CRM.API.updateRecord(eventUpdate)
+                .then(function(data){
+                    console.log(data)
+                });
         },
         eventResize: function ( eventData ) { /// event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view
             // handle all resizing events (i.e. changing an events duration)
@@ -55,6 +70,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
             console.log(eventData.event.title + " end is now " + eventData.event.end.toISOString());
 
+            // to Zoho
+            let eventUpdate={
+                Entity:"Leads",
+                APIData:{
+                    "id": eventData.event.id,
+                    "Subject": eventData.event.title,
+                    "Start_Date": eventData.event.start.toISOString(),
+                    "End_Date": eventData.event.end.toISOString(),
+                }
+            }
+            ZOHO.CRM.API.updateRecord(eventUpdate)
+                .then(function(data){
+                    console.log(data)
+                });
         }
 
     });
@@ -91,9 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     df.appendChild(option); // append the option to the document fragment
                 }
                 elm.appendChild(df); // append the document fragment to the DOM. this is the better way rather than setting innerHTML a bunch of times (or even once with a long string)
-                // Example call of 'refresh'
-                // $('.selectpicker').selectpicker('refresh');
-
             })
          await getIDbyClickOnVendor();//.then(r => 'notfound');
     })
