@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 APIData:{
                     "id": eventData.event.id,
                     "Subject": eventData.event.title,
-                    "Start_Date": eventData.event.start.toISOString(),
-                    "End_Date": eventData.event.end.toISOString(),
+                    "Start_Date": eventData.event.start,
+                    "End_Date": eventData.event.end,
                 }
             }
             ZOHO.CRM.API.updateRecord(eventUpdate)
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("resize");
             // console.log("eventData" + JSON.stringify(eventData));
 
-            console.log(eventData.event.title + " end is now " + eventData.event.end.toISOString());
+            console.log(eventData.event.title + " end is now " + eventData.event.end);
 
             // to Zoho
             let eventUpdate = {
@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 APIData:{
                     "id": eventData.event.id,
                     "Subject": eventData.event.title,
-                    "Start_Date": eventData.event.start.toISOString(),
-                    "End_Date": eventData.event.end.toISOString(),
+                    "Start_Date": eventData.event.start,
+                    "End_Date": eventData.event.end,
                 }
             }
             ZOHO.CRM.API.updateRecord(eventUpdate)
