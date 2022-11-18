@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
             let eventUpdate = {
                 Entity:"Sales_Orders",
                 APIData:{
-                    "id": eventData.event.id,
-                    "Subject": eventData.event.title,
-                    "Start_Date": eventData.event.start.toLocaleDateString('en-US'),
-                    "End_Date": eventData.event.end,
+                    "id" : eventData.event.id,
+                    "Subject" : eventData.event.title,
+                    "Start_Date" : eventData.event.start.toLocaleDateString('en-US'),
+                    "End_Date": eventData.event.end.toLocaleDateString('en-US'),
                 }
             }
             ZOHO.CRM.API.updateRecord(eventUpdate)
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 APIData:{
                     "id": eventData.event.id,
                     "Subject": eventData.event.title,
-                    "Start_Date": eventData.event.start.toLocaleDateString('en-US'),
+                    // "Start_Date": eventData.event.start.toLocaleDateString('en-US'),
                     "End_Date": eventData.event.end.toLocaleDateString('en-US'),
                 }
             }
