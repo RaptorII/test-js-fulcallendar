@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (calendar) { // refresh all events
                     calendar.removeAllEvents();
+                    calendar.render();
                 }
 
                 let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
