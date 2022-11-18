@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (calendar) { // refresh all events
                     calendar.removeAllEvents();
-                    calendar.render();
                 }
 
                 let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
@@ -126,6 +125,17 @@ document.addEventListener('DOMContentLoaded', function () {
                                     // console.log('dataZC_S= ' + dataZC?.Start_Date );
                                     // console.log('dataZC_E= ' + dataZC?.End_Date );
 
+                                    calendar.batchRendering(function() {
+                                        calendar.changeView('dayGridMonth');
+                                        calendar.addEvent({
+                                            id: dataZ[i].Jobsheet.id,
+                                            title: dataZC?.Subject,
+                                            start: dataZC?.Start_Date,
+                                            end: dataZC?.End_Date,
+                                            allDay: false
+                                        });
+                                    });
+                                    /*
                                     calendar.addEvent({
                                         id: dataZ[i].Jobsheet.id,
                                         title: dataZC?.Subject,
@@ -133,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         end: dataZC?.End_Date,
                                         allDay: false
                                     });
-
+                                    */
                                 });
 
 
