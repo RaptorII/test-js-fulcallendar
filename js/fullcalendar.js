@@ -155,7 +155,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                         start: dataZC?.Start_Date,
                                         end: dataZC?.End_Date,
                                         // allDay: false, // if option is 'on' then destroi editable
-                                        editable: true
+                                        editable: true,
+                                        description: dataZC?.Subject,
                                     });
 
                                 });
