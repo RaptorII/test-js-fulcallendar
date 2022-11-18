@@ -38,7 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
                start: '2022-08-11',
                end: '2022-08-13'
             }*/
-        ]
+        ],
+        drop: function(start, end, allDay) {
+
+            console.clear();
+            console.log("dropped");
+            console.log(start.format());
+            console.log(end.format());
+            console.log(allDay.format());
+        }
 
     });
     calendar.render();
