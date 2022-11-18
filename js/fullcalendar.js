@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         start: dataZC?.Start_Date,
                                         end: dataZC?.End_Date,
                                         allDay: false,
-                                        resourceEditable: true,
+                                        editable: true
                                     });
 
                                 });
