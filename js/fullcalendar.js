@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
         initialView: 'dayGridMonth',
         // initialDate: '2022-08-07',
         selectable: true,
-        plugins: [ interactionPlugin ],
         editable: true,
         headerToolbar: {
             left: 'prev,next today',
