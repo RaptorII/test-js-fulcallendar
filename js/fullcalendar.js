@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     ZOHO.embeddedApp.init();
 
-     function getIDbyClickOnVendor() {
+     async function getIDbyClickOnVendor() {
         let selectpickerItems = document.getElementsByClassName('selectpicker__item');
 
         for (let i = 0; i < selectpickerItems.length; i++) {
