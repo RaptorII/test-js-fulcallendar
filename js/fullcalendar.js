@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     calendar.render();
 
-    ZOHO.embeddedApp.on("PageLoad", function(data){
+    ZOHO.embeddedApp.on("PageLoad", async function(data){
         // console.log('data= '+data);
 
         var vendor_list = [];
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // $('.selectpicker').selectpicker('refresh');
 
             })
-         getIDbyClickOnVendor().then(r => 'notfound');
+         await getIDbyClickOnVendor().then(r => 'notfound');
     })
     ZOHO.embeddedApp.init();
 
