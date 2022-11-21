@@ -166,9 +166,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                     dataZC = dataZC?.data[0];
 
                                     console.log('i= ' + i );
-                                    console.log('dataZC= ' + JSON.stringify(dataZC) );
-                                    // console.log('dataZC_S= ' + dataZC?.Start_Date );
-                                    // console.log('dataZC_E= ' + dataZC?.End_Date );
+                                    // console.log('dataZC= ' + JSON.stringify(dataZC) );
+                                    console.log('dataZC_S= ' + dataZC?.Start_Date );
+                                    console.log('dataZC_E= ' + dataZC?.End_Date );
 
                                     // calendar.batchRendering(function() {
                                     //     calendar.changeView('dayGridMonth');
