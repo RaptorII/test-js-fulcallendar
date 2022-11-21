@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 })
                                 .then(function(dataZC){
                                     if(dataZC) {
-                                        dataZC = dataZC?.data[0];
+                                        // dataZC = dataZC?.data[0];
 
                                         console.log('i= ' + i);
                                         // console.log('dataZC= ' + JSON.stringify(dataZC) );
