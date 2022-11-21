@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 APIData:{
                     "id" : eventData.event.id,
                     "Subject" : eventData.event.title,
-                    "Start_Date": (new Date(eventData.event.start).toISOString().split('T')[0]).toLocaleString('en-US', { timeZone: 'America/Chicago' }),
-                    "End_Date"  : (new Date(eventData.event.end).toISOString().split('T')[0]).toLocaleString('en-US', { timeZone: 'America/Chicago' }),
+                    "Start_Date": (new Date(eventData.event.start.toLocaleString('en-US', { timeZone: 'America/Chicago' })).toISOString().split('T')[0]),
+                    "End_Date"  : (new Date(eventData.event.end.toLocaleString('en-US', { timeZone: 'America/Chicago' })).toISOString().split('T')[0]),
                 }
             }
             ZOHO.CRM.API.updateRecord(eventUpdate)
