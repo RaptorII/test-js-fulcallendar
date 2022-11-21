@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 APIData:{
                     "id" : eventData.event.id,
                     "Subject" : eventData.event.title,
-                    "Start_Date": new Date(eventData.event.start).toISOString().split('T')[0],
-                    "End_Date"  : new Date(eventData.event.end).toISOString().split('T')[0],
+                    "Start_Date": (new Date(eventData.event.start).toISOString().split('T')[0]).toLocaleString('en-US', { timeZone: 'America/Chicago' }),
+                    "End_Date"  : (new Date(eventData.event.end).toISOString().split('T')[0]).toLocaleString('en-US', { timeZone: 'America/Chicago' }),
                 }
             }
             ZOHO.CRM.API.updateRecord(eventUpdate)
@@ -171,30 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                         console.log('dataZC_S= ' + dataZC?.Start_Date);
                                         console.log('dataZC_E= ' + dataZC?.End_Date);
 
-                                        // calendar.batchRendering(function() {
-                                        //     calendar.changeView('dayGridMonth');
-                                        //     calendar.addEvent({
-                                        //         id: dataZ[i].Jobsheet.id,
-                                        //         title: dataZC?.Subject,
-                                        //         start: dataZC?.Start_Date,
-                                        //         end: dataZC?.End_Date,
-                                        //         editable: true,
-                                        //         allDay: false,
-                                        //     });
-                                        // });
-
-                                        // var eventObject = {
-                                        //     title: displayText,
-                                        //     start: item.startDate,
-                                        //     end : item.endDate,
-                                        //     allDay:true,
-                                        //     color: '#BABBBF',
-                                        //     editable : false,
-                                        //     className : "user_block"
-                                        // };
-                                        // calendar.fullCalendar('renderEvent', eventObject, true);
-
-
                                         calendar.addEvent({
                                             id: dataZC.id,
                                             title: dataZC?.Subject,
@@ -221,11 +197,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-
-    // [].forEach.call(selectpickerItems,function(el){
-    //     el.addEventListener('click', function (e) {
-    //         console.log('qwerty= ' + JSON.stringify( this.getAttribute('data-id') ) );
-    //     })
-    // });
 
 })
