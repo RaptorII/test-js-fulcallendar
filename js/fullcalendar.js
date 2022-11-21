@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("dropped");
             // console.log("eventData" + JSON.stringify(eventData));
 
-            console.log(eventData.event.title + " start is now " + eventData.event.start.toISOString().split('T')[0]);
-            console.log(eventData.event.title + " end is now " + eventData.event.end.toISOString().split('T')[0]);
+            console.log(eventData.event.title + " start is now " + eventData.event.start.toISOString());
+            console.log(eventData.event.title + " end is now " + eventData.event.end.toISOString());
 
             // to Zoho
             let eventUpdate = {
@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("resize");
             // console.log("eventData" + JSON.stringify(eventData));
 
-            console.log(eventData.event.title + " start is now " + eventData.event.start.toISOString().split('T')[0]);
-            console.log(eventData.event.title + " end is now " + eventData.event.end.toISOString().split('T')[0]);
+            console.log(eventData.event.title + " start is now " + eventData.event.start.toISOString());
+            console.log(eventData.event.title + " end is now " + eventData.event.end.toISOString());
 
             // to Zoho
             let eventUpdate = {
