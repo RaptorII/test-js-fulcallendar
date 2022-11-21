@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         initialDate: '2022-08-07',
         selectable: true,
         editable: true,
-        nextDayThreshold: '00:00:00',
+        nextDayThreshold: '-06:00:00',
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
