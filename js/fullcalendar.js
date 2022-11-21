@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(data)
                 });
         },
-        eventResize: changeEventData(),
+        eventResize: changeEventData(eventData),
 
 
     });
