@@ -163,46 +163,48 @@ document.addEventListener('DOMContentLoaded', function () {
                                     Query: "(id:equals:" + dataZ[i].Jobsheet.id + ")"
                                 })
                                 .then(function(dataZC){
-                                    dataZC = dataZC?.data[0];
+                                    if(dataZC) {
+                                        dataZC = dataZC?.data[0];
 
-                                    console.log('i= ' + i );
-                                    // console.log('dataZC= ' + JSON.stringify(dataZC) );
-                                    console.log('dataZC_S= ' + dataZC?.Start_Date );
-                                    console.log('dataZC_E= ' + dataZC?.End_Date );
+                                        console.log('i= ' + i);
+                                        // console.log('dataZC= ' + JSON.stringify(dataZC) );
+                                        console.log('dataZC_S= ' + dataZC?.Start_Date);
+                                        console.log('dataZC_E= ' + dataZC?.End_Date);
 
-                                    // calendar.batchRendering(function() {
-                                    //     calendar.changeView('dayGridMonth');
-                                    //     calendar.addEvent({
-                                    //         id: dataZ[i].Jobsheet.id,
-                                    //         title: dataZC?.Subject,
-                                    //         start: dataZC?.Start_Date,
-                                    //         end: dataZC?.End_Date,
-                                    //         editable: true,
-                                    //         allDay: false,
-                                    //     });
-                                    // });
+                                        // calendar.batchRendering(function() {
+                                        //     calendar.changeView('dayGridMonth');
+                                        //     calendar.addEvent({
+                                        //         id: dataZ[i].Jobsheet.id,
+                                        //         title: dataZC?.Subject,
+                                        //         start: dataZC?.Start_Date,
+                                        //         end: dataZC?.End_Date,
+                                        //         editable: true,
+                                        //         allDay: false,
+                                        //     });
+                                        // });
 
-                                    // var eventObject = {
-                                    //     title: displayText,
-                                    //     start: item.startDate,
-                                    //     end : item.endDate,
-                                    //     allDay:true,
-                                    //     color: '#BABBBF',
-                                    //     editable : false,
-                                    //     className : "user_block"
-                                    // };
-                                    // calendar.fullCalendar('renderEvent', eventObject, true);
+                                        // var eventObject = {
+                                        //     title: displayText,
+                                        //     start: item.startDate,
+                                        //     end : item.endDate,
+                                        //     allDay:true,
+                                        //     color: '#BABBBF',
+                                        //     editable : false,
+                                        //     className : "user_block"
+                                        // };
+                                        // calendar.fullCalendar('renderEvent', eventObject, true);
 
 
-                                    calendar.addEvent({
-                                        id: dataZC.id,
-                                        title: dataZC?.Subject,
-                                        start: dataZC?.Start_Date,
-                                        end: dataZC?.End_Date,
-                                        // allDay: false, // if option is 'on' then destroi editable
-                                        editable: true,
-                                        description: dataZC?.Subject,
-                                    });
+                                        calendar.addEvent({
+                                            id: dataZC.id,
+                                            title: dataZC?.Subject,
+                                            start: dataZC?.Start_Date,
+                                            end: dataZC?.End_Date,
+                                            // allDay: false, // if option is 'on' then destroi editable
+                                            editable: true,
+                                            description: dataZC?.Subject,
+                                        });
+                                    }
 
                                 });
 
