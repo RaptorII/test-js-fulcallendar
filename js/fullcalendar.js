@@ -47,12 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const offset = new Date().getTimezoneOffset();
             let startDate = new Date(eventData.event.start.getTime() - (offset*60*1000));
-            startDate = startDate.toISOString().split('T')[0];
             let endDate = new Date(eventData.event.end.getTime() - (offset*60*1000));
-            endDate = endDate.toISOString().split('T')[0];
 
             console.log(eventData.event.title + " start is now " + startDate);
             console.log(eventData.event.title + " end is now " + endDate);
+
+            startDate = startDate.toISOString().split('T')[0];
+            endDate = endDate.toISOString().split('T')[0];
 
             // to Zoho
             let eventUpdate = {
@@ -75,6 +76,12 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("resize");
             // console.log("eventData" + JSON.stringify(eventData));
 
+            const offset = new Date().getTimezoneOffset();
+            let startDate = new Date(eventData.event.start.getTime() - (offset*60*1000));
+            startDate = startDate.toISOString().split('T')[0];
+            let endDate = new Date(eventData.event.end.getTime() - (offset*60*1000));
+            endDate = endDate.toISOString().split('T')[0];
+
             console.log(eventData.event.title + " start is now " + eventData.event.start.toISOString());
             console.log(eventData.event.title + " end is now " + eventData.event.end.toISOString());
 
@@ -84,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 APIData:{
                     "id": eventData.event.id,
                     "Subject": eventData.event.title,
-                    "Start_Date": new Date(eventData.event.start).toISOString().split('T')[0],
-                    "End_Date"  : new Date(eventData.event.end).toISOString().split('T')[0],
+                    "Start_Date": startDate,
+                    "End_Date"  : endDate,
                 }
             }
             ZOHO.CRM.API.updateRecord(eventUpdate)
