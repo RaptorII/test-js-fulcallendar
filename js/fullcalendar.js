@@ -5,19 +5,17 @@ document.addEventListener('DOMContentLoaded', function () {
     let calendarEl = document.getElementById('calendar');
     let calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
-        // initialDate: '2022-08-07',
+        initialDate: '2022-08-07',
         selectable: true,
         editable: true,
+        nextDayThreshold: '00:00:00',
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
         events: [
-            /*{
-               title: 'All Day Event',
-               start: '2022-08-01'
-            },
+
             {
                title: 'Long Event',
                start: '2022-08-07',
@@ -37,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
                title: 'Conference',
                start: '2022-08-11',
                end: '2022-08-13'
-            }*/
+            }
         ],
         eventDrop: function ( eventData ) {/* event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view */
             // handle all internal drops (or 'moves').
