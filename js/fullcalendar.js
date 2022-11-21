@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         selectable: true,
         editable: true,
         allDay:  false,
-        nextDayThreshold: '00:00:00',
+        nextDayThreshold: '12:00:00',
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
