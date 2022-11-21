@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("dropped");
             // console.log("eventData" + JSON.stringify(eventData));
 
-            const offset = new Date().getTimezoneOffset();
+            const offset = (new Date()).getTimezoneOffset();
             let startDate = new Date(eventData.event.start.getTime() - (offset*60*1000));
             let endDate = new Date(eventData.event.end.getTime() - (offset*60*1000));
 
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("resize");
             // console.log("eventData" + JSON.stringify(eventData));
 
-            const offset = new Date().getTimezoneOffset();
+            const offset = (new Date()).getTimezoneOffset();
             let startDate = new Date(eventData.event.start.getTime() - (offset*60*1000));
             startDate = startDate.toISOString().split('T')[0];
             let endDate = new Date(eventData.event.end.getTime() - (offset*60*1000));
