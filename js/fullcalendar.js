@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("dropped");
             // console.log("eventData" + JSON.stringify(eventData));
 
-            console.log(eventData.event.title + " start is now " + (new Date(eventData.event.start.toLocaleString('en-US', { timeZone: 'America/Chicago' })).toISOString().split('T')[0]));
-            console.log(eventData.event.title + " end is now " + (new Date(eventData.event.end.toLocaleString('en-US', { timeZone: 'America/Chicago' })).toISOString().split('T')[0]));
+            console.log(eventData.event.title + " start is now " + (new Date(eventData.event.start.toLocaleString('en-US', { timeZone: 'America/Chicago' }))));
+            console.log(eventData.event.title + " end is now " + (new Date(eventData.event.end.toLocaleString('en-US', { timeZone: 'America/Chicago' }))));
 
             // to Zoho
             let eventUpdate = {
