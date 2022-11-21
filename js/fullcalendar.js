@@ -70,39 +70,43 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(data)
                 });
         },
-        eventResize: function ( eventData ) { /// event, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view
-            // handle all resizing events (i.e. changing an events duration)
-            console.clear();
-            console.log("resize");
-            // console.log("eventData" + JSON.stringify(eventData));
+        eventResize: changeEventData(),
 
-            const offset = (new Date()).getTimezoneOffset();
-            let startDate = new Date(eventData.event.start.getTime() - (offset*60*1000));
-            let endDate = new Date(eventData.event.end.getTime() - (offset*60*1000));
-            startDate = startDate.toISOString().split('T')[0];
-            endDate = endDate.toISOString().split('T')[0];
-
-            console.log(eventData.event.title + " start is now " + startDate.toISOString());
-            console.log(eventData.event.title + " end is now " + endDate.toISOString());
-
-            // to Zoho
-            let eventUpdate = {
-                Entity:"Sales_Orders",
-                APIData:{
-                    "id": eventData.event.id,
-                    "Subject": eventData.event.title,
-                    "Start_Date": startDate,
-                    "End_Date"  : endDate,
-                }
-            }
-            ZOHO.CRM.API.updateRecord(eventUpdate)
-                .then(function(data){
-                    console.log(data)
-                });
-        }
 
     });
     calendar.render();
+
+    function changeEventData( eventData ) {
+        // handle all resizing events (i.e. changing an events duration)
+        console.clear();
+        console.log("resize");
+        // console.log("eventData" + JSON.stringify(eventData));
+
+        const offset = (new Date()).getTimezoneOffset();
+        let startDate = new Date(eventData.event.start.getTime() - (offset*60*1000));
+        let endDate = new Date(eventData.event.end.getTime() - (offset*60*1000));
+        startDate = startDate.toISOString().split('T')[0];
+        endDate = endDate.toISOString().split('T')[0];
+
+        console.log(eventData.event.title + " start is now " + startDate.toISOString());
+        console.log(eventData.event.title + " end is now " + endDate.toISOString());
+
+        // to Zoho
+        let eventUpdate = {
+            Entity:"Sales_Orders",
+            APIData:{
+                "id": eventData.event.id,
+                "Subject": eventData.event.title,
+                "Start_Date": startDate,
+                "End_Date"  : endDate,
+            }
+        }
+        ZOHO.CRM.API.updateRecord(eventUpdate)
+            .then(function(data){
+                console.log(data)
+            });
+
+    }
 
     ZOHO.embeddedApp.on("PageLoad", async function(data){
         // console.log('data= '+data);
