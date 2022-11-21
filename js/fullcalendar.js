@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         selectable: true,
         editable: true,
         allDay:  false,
-        nextDayThreshold: '12:00:00',
+        nextDayThreshold: '00:00:00',
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 APIData:{
                     "id" : eventData.event.id,
                     "Subject" : eventData.event.title,
-                    "Start_Date" : eventData.event.start.toISOString().split('T')[0],
-                    "End_Date": eventData.event.end.toISOString().split('T')[0],
+                    "Start_Date": new Date(eventData.event.start).toISOString().split('T')[0],
+                    "End_Date"  : new Date(eventData.event.end).toISOString().split('T')[0],
                 }
             }
             ZOHO.CRM.API.updateRecord(eventUpdate)
@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 APIData:{
                     "id": eventData.event.id,
                     "Subject": eventData.event.title,
-                    "Start_Date": eventData.event.start.toISOString().split('T')[0],
-                    "End_Date": eventData.event.end.toISOString().split('T')[0],
+                    "Start_Date": new Date(eventData.event.start).toISOString().split('T')[0],
+                    "End_Date"  : new Date(eventData.event.end).toISOString().split('T')[0],
                 }
             }
             ZOHO.CRM.API.updateRecord(eventUpdate)
