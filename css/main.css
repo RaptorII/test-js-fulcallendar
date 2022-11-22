@@ -1534,3 +1534,56 @@ A VERTICAL event
     font-weight: bold;
     color: #0d6efd;
 }
+
+#add-event {
+    position: absolute;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.5) 40%, rgba(0,212,255,1) 100%);
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.block-none {
+    display: none;
+}
+
+.block-show {
+    display: block;
+    animation: showBlock 1s linear forwards;
+}
+
+@keyframes showBlock {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    /*position: relative;*/
+}
+
+.add-event__wrapper {
+    padding: 30px;
+    background: white;
+    max-width: 50%;
+    /*margin: 0 auto;*/
+    position: absolute;
+    transform: translate(50%, 50%);
+    /*left: -50%;*/
+    /*top: -50%;*/
+}
+
+.add-event__accname,
+.add-event__vendor{
+    padding-top : 20px;
+}
+.add-event__btn {
+    margin-left: auto;
+    display: block;
+    margin-top: 20;
+}

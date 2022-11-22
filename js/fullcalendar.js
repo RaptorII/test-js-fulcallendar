@@ -1,6 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log('start input');
 
+    let addEventWrapper = document.getElementById('add-event');
+
+    let datePickerS = MCDatepicker.create(
+        {
+            el: '#datepicker-start',
+            bodyType: 'inline',
+            closeOnBlur: true,
+            dateFormat: 'YYYY-MM-DD'
+        });
+    let datePickerE = MCDatepicker.create(
+        {
+            el: '#datepicker-end',
+            bodyType: 'inline',
+            closeOnBlur: true,
+            dateFormat: 'YYYY-MM-DD'
+        });
+
     // calendar
     let calendarEl = document.getElementById('calendar');
     let calendar = new FullCalendar.Calendar(calendarEl, {
@@ -8,12 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // initialDate: '2022-08-07',
         selectable: true,
         editable: true,
-        allDay:  false,
+        // allDay:  false,
         nextDayThreshold: '00:00:00',
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            right: 'addEventButton'//'dayGridMonth,timeGridWeek,timeGridDay'
         },
         events: [
 /*
@@ -99,7 +116,33 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(data)
                 });
         },
+        customButtons: {
+            addEventButton: {
+                text: 'add event...',
+                click: function() {
+                    /*var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+                    var date = new Date(dateStr + 'T00:00:00'); // will be in local time
 
+                    if (!isNaN(date.valueOf())) { // valid?
+                        calendar.addEvent({
+                            title: 'dynamic event',
+                            start: date,
+                            allDay: true
+                        });
+                        alert('Great. Now, update your database...');
+                    } else {
+                        alert('Invalid date.');
+                    }*/
+
+                    // addEventWrapper.style.visibility = "visible";
+                    addEventWrapper.classList.remove('block-none');
+                    addEventWrapper.classList.add('block-show');
+
+
+
+                }
+            }
+        }
 
     });
     calendar.render();
