@@ -142,6 +142,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     console.log('main_vendor_list=' + JSON.stringify(main_vendor_list));
 
+                    // list of vendors
+                    let elm1 = document.getElementById('event__vendor');
+                    let  df1 = document.createDocumentFragment();
+                    for (let i = 0, l = main_vendor_list.length; i < l; i++) {
+                        let option = document.createElement('div'); // create the option element
+                        option.className = "event__vendor--item";
+                        // option.value = vendor_list[i].id; // set the value property
+                        option.setAttribute("data-id", main_vendor_list[i].id);
+                        option.setAttribute("data-name", main_vendor_list[i].title);
+                        option.appendChild(document.createTextNode(main_vendor_list[i].title)); // set the textContent in a safe way.
+                        df1.appendChild(option); // append the option to the document fragment
+                    }
+                    elm1.appendChild(df1);
+
                     /*ZOHO.embeddedApp.on("PageLoad", async function(data){
                         let vendor_list = [];
                         await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
@@ -213,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 let elm = document.getElementById('employee_option');
                 let  df = document.createDocumentFragment(); // create a document fragment to hold the options while we create them
                 for (let i = 0, l = vendor_list.length; i < l; i++) {
-                    var option = document.createElement('div'); // create the option element
+                    let option = document.createElement('div'); // create the option element
                     option.className = "selectpicker__item";
                     // option.value = vendor_list[i].id; // set the value property
                     option.setAttribute("data-id", vendor_list[i].id);
