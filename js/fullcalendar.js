@@ -140,10 +140,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     addEventWrapper.classList.add('block-show');
                     bodyId.style.overflow = "hidden";
 
-                    ZOHO.embeddedApp.on("PageLoad", function(data){
+                    ZOHO.embeddedApp.on("PageLoad", async function(data){
                         let vendor_list = [];
-                        ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
-                            .then(function (vendor_detail) {
+                        await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
+                            .then( async function (vendor_detail) {
                                 // console.log("Employee Record=" + vendor_detail.data);
                                 let get_all_vendor = vendor_detail.data;
                                 for (let i = 0, l = get_all_vendor.length; i < l; i++) {
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 })
                                 .then(function(dataZC){
                                     if(dataZC) {
-                                        dataZC = dataZC?.data[0];
+                                        dataZC = dataZC?.data;
 
                                         console.log('i= ' + i);
                                         // console.log('dataZC= ' + JSON.stringify(dataZC) );
