@@ -157,37 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     elm1.appendChild(df1);
                     // console.log("df1=" + df1);
 
-                    /*ZOHO.embeddedApp.on("PageLoad", async function(data){
-                        let vendor_list = [];
-                        await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
-                            .then( async function (vendor_detail) {
-                                // console.log("Employee Record=" + vendor_detail.data);
-                                let get_all_vendor = vendor_detail.data;
-                                for (let i = 0, l = get_all_vendor.length; i < l; i++) {
-                                    let vendor_object = {};
-                                    vendor_object.id = get_all_vendor[i].id;
-                                    vendor_object.title = get_all_vendor[i].Vendor_Name;
-                                    vendor_list.push(vendor_object);
-                                }
-                                console.log('vendor_list: ' +  JSON.stringify(vendor_list));
 
-                                // list of vendors
-                                let elm1 = document.getElementById('event__vendor');
-                                let  df1 = document.createDocumentFragment();
-                                for (let i = 0, l = vendor_list.length; i < l; i++) {
-                                    var option = document.createElement('div'); // create the option element
-                                    option.className = "event__vendor--item";
-                                    // option.value = vendor_list[i].id; // set the value property
-                                    option.setAttribute("data-id", vendor_list[i].id);
-                                    option.setAttribute("data-name", vendor_list[i].title);
-                                    option.appendChild(document.createTextNode(vendor_list[i].title)); // set the textContent in a safe way.
-                                    df1.appendChild(option); // append the option to the document fragment
-                                }
-                                elm1.appendChild(df1);
-                            })
-                    });
-                    ZOHO.embeddedApp.init().then(r => 'error');
-                    */
                 }
             }
         }
@@ -204,13 +174,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     let main_vendor_list = [];
+    let main_account_list = [];
 
     ZOHO.embeddedApp.on("PageLoad", async function(data){
         // console.log('data= '+ JSON.stringify(data));
 
         let vendor_list = [];
         // var jobsheet_list = [];
-         await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
+        await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
             .then(async function (vendor_detail) {
                 // console.log("Employee Record");
                 // console.log(vendor_detail.data);
@@ -238,7 +209,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 elm.appendChild(df); // append the document fragment to the DOM. this is the better way rather than setting innerHTML a bunch of times (or even once with a long string)
             })
-         await getIDbyClickOnVendor();//.then(r => 'notfound');
+        await getIDbyClickOnVendor();//.then(r => 'notfound');
+
+        let account_list = [];
+        await ZOHO.CRM.API.getAllRecords({ Entity: "Accounts", sort_order: "asc", per_page: 100, page: 1 })
+            .then(async function (account_detail) {
+                var get_all_accounts = account_detail.data;
+                for (let i = 0, l = get_all_accounts.length; i < l; i++) {
+                    var account_object = {};
+                    account_object.id = get_all_accounts[i].id;
+                    account_object.title = get_all_accounts[i].Account_Name;
+                    account_list.push(account_object);
+                }
+                // console.log('vendor_list: ' +  JSON.stringify(vendor_list));
+                main_account_list = account_list;
+
+            })
     })
     ZOHO.embeddedApp.init();
 
