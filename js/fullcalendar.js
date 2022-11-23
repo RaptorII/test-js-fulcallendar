@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
                     // list of accounts
-                    console.log('main_accounts_list.length: ' + main_accounts_list.length);
+                    console.log('main_account_list.length: ' + main_account_list.length);
 
                     let elm2 = document.getElementById('event__accname');
                     let  df2 = document.createDocumentFragment();
