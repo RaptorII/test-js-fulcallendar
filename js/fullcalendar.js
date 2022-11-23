@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ZOHO.embeddedApp.on("PageLoad", function(data){
                         let vendor_list = [];
                         ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
-                            .then(async function (vendor_detail) {
+                            .then(function (vendor_detail) {
                                 // console.log("Employee Record=" + vendor_detail.data);
                                 let get_all_vendor = vendor_detail.data;
                                 for (let i = 0, l = get_all_vendor.length; i < l; i++) {
