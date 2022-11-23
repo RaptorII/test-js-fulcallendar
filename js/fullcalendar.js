@@ -236,6 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     account_list.push(account_object);
                 }
                 // console.log('vendor_list: ' +  JSON.stringify(vendor_list));
+                console.log('get_all_accounts.length: ' +  get_all_accounts.length);
                 main_account_list = account_list;
 
             })
