@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
         await getIDbyClickOnVendor();//.then(r => 'notfound');
 
         let account_list = [];
-        await ZOHO.CRM.API.getAllRecords({ Entity: "Accounts", sort_order: "asc", per_page: 200, page: 1 })
+        await ZOHO.CRM.API.getAllRecords({ Entity: "Accounts", sort_order: "asc", per_page: 1000, page: 1 })
             .then(async function (account_detail) {
                 var get_all_accounts = account_detail.data;
                 for (let i = 0, l = get_all_accounts.length; i < l; i++) {
