@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('start input');
 
     let addEventWrapper = document.getElementById('add-event');
+    let bodyId = document.getElementById('body-id');
 
     let datePickerS = MCDatepicker.create(
         {
@@ -137,8 +138,37 @@ document.addEventListener('DOMContentLoaded', function () {
                     // addEventWrapper.style.visibility = "visible";
                     addEventWrapper.classList.remove('block-none');
                     addEventWrapper.classList.add('block-show');
+                    bodyId.style.overflow = "hidden";
 
+                    ZOHO.embeddedApp.on("PageLoad", async function(data){
+                        let vendor_list = [];
+                        await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
+                            .then(async function (vendor_detail) {
+                                // console.log("Employee Record=" + vendor_detail.data);
+                                let get_all_vendor = vendor_detail.data;
+                                for (let i = 0, l = get_all_vendor.length; i < l; i++) {
+                                    let vendor_object = {};
+                                    vendor_object.id = get_all_vendor[i].id;
+                                    vendor_object.title = get_all_vendor[i].Vendor_Name;
+                                    vendor_list.push(vendor_object);
+                                }
+                                // console.log('vendor_list: ' +  JSON.stringify(vendor_list));
 
+                                // list of vendors
+                                let elm = document.getElementById('event__vendor');
+                                let  df = document.createDocumentFragment();
+                                for (let i = 0, l = vendor_list.length; i < l; i++) {
+                                    var option = document.createElement('div'); // create the option element
+                                    option.className = "event__vendor--item";
+                                    // option.value = vendor_list[i].id; // set the value property
+                                    option.setAttribute("data-id", vendor_list[i].id);
+                                    option.setAttribute("data-name", vendor_list[i].title);
+                                    option.appendChild(document.createTextNode(vendor_list[i].title)); // set the textContent in a safe way.
+                                    df.appendChild(option); // append the option to the document fragment
+                                }
+                                elm.appendChild(df);
+                            })
+                    });
 
                 }
             }
@@ -146,6 +176,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
     calendar.render();
+
+    // close event popap;
+    let closeEventWrapper = document.getElementsByClassName('close');
+    closeEventWrapper[0].onclick = function() {
+        addEventWrapper.classList.remove('block-show');
+        addEventWrapper.classList.add('block-none');
+        bodyId.style.overflow = "auto";
+    }
 
     ZOHO.embeddedApp.on("PageLoad", async function(data){
         // console.log('data= '+data);

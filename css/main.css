@@ -1536,16 +1536,17 @@ A VERTICAL event
 }
 
 #add-event {
-    position: absolute;
+    position: fixed;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.5) 40%, rgba(0,212,255,1) 100%);
-    top:0;
-    bottom: 0;
+    top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    height: 100%;
     z-index: 1;
 }
 
 .block-none {
+    animation: noneBlock 1s linear forwards;
     display: none;
 }
 
@@ -1562,6 +1563,14 @@ A VERTICAL event
         opacity: 1;
     }
 }
+@keyframes noneBlock {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 
 body {
     /*position: relative;*/
@@ -1571,19 +1580,44 @@ body {
     padding: 30px;
     background: white;
     max-width: 50%;
-    /*margin: 0 auto;*/
     position: absolute;
-    transform: translate(50%, 50%);
-    /*left: -50%;*/
-    /*top: -50%;*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .add-event__accname,
 .add-event__vendor{
-    padding-top : 20px;
+    padding-bottom : 20px;
 }
 .add-event__btn {
     margin-left: auto;
     display: block;
-    margin-top: 20;
+}
+.close{
+    display: block;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding: 1px 12px;
+}
+
+label[for=datepicker-end] {
+    padding-left: 20px;
+}
+
+label[for=datepicker-start],
+label[for=datepicker-end],
+label[for=event__name] {
+    width: 100px;
+}
+
+.add-event__name,
+.add-event__date {
+    padding-bottom: 20px;
+    display: flex;
+}
+
+#event__name {
+    display: flex;
+    flex: 1 1 auto;
 }

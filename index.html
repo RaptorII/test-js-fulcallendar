@@ -19,7 +19,7 @@
 <!--    <link href='css/datepicker.min.css' rel='stylesheet' />-->
 
 </head>
-<body>
+<body id="body-id">
 
     <div class="main-wrap">
         <div id="vendor-list">
@@ -33,6 +33,9 @@
     </div>
     <div id="add-event" class="block-none">
         <div class="add-event__wrapper">
+            <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
             <div class="add-event__date">
                 <label for="datepicker-start"> Start Date </label>
                 <input id="datepicker-start" type="text">
@@ -46,11 +49,7 @@
             </div>
             <div class="add-event__vendor">
                 <div id="event__vendor" class="ev-picker">
-                    <div class="selectpicker__item" data-id="3546009000013988058">Acosta Painting LLC (Denis)</div>
-                    <div class="selectpicker__item" data-id="3546009000013988075">Cavalla Contractors (Nyema)</div>
-                    <div class="selectpicker__item" data-id="3546009000013988086">G.D. Painting (Blad)</div>
-                    <div class="selectpicker__item" data-id="3546009000013988109">MM Services (Alex Moreira)</div>
-                    <div class="selectpicker__item" data-id="3546009000013988132">JMR Painting LLC (Juan Maldonado)</div>
+                    <input type="text" id="event__vendor--search">
                 </div>
             </div>
             <div class="add-event__accname">
