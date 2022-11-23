@@ -157,10 +157,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     elm1.appendChild(df1);
                     // console.log("df1=" + df1);
 
-
                     // list of accounts
-                    console.log('main_account_list.length: ' + main_account_list.length);
-
+                    //console.log('main_account_list.length: ' + main_account_list.length);
                     let elm2 = document.getElementById('event__accname');
                     let  df2 = document.createDocumentFragment();
                     for (let i = 0, l = main_account_list.length; i < l; i++) {
@@ -173,6 +171,40 @@ document.addEventListener('DOMContentLoaded', function () {
                         df2.appendChild(option); // append the option to the document fragment
                     }
                     elm2.appendChild(df2);
+
+                    // filter vendors;
+                    let evSearch = document.getElementById('event__vendor--search');
+                    evSearch.onkeyup = function() {
+                        let filter = evSearch.value.toUpperCase();
+                        let evItem = elm1.getElementsByClassName('event__vendor--item');
+                        for (i = 0; i < evItem.length; i++) {
+                            txtValue = evItem[i].textContent || evItem[i].innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                evItem[i].style.display = "";
+                            } else {
+                                evItem[i].style.display = "none";
+                            }
+                        }
+
+                    }
+
+
+
+                    /*function filterFunction() {
+                        var input, filter, ul, li, a, i;
+                        input = document.getElementById("myInput");
+                        filter = input.value.toUpperCase();
+                        div = document.getElementById("myDropdown");
+                        a = div.getElementsByTagName("a");
+                        for (i = 0; i < a.length; i++) {
+                            txtValue = a[i].textContent || a[i].innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                a[i].style.display = "";
+                            } else {
+                                a[i].style.display = "none";
+                            }
+                        }
+                    }*/
 
                 }
             }
@@ -308,14 +340,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             }
                         }
                     });
-
-
-
                 return this.getAttribute('data-id');
             });
         }
     }
-
-
 
 })
