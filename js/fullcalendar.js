@@ -158,6 +158,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     // console.log("df1=" + df1);
 
 
+                    // list of accounts
+                    let elm2 = document.getElementById('event__accname');
+                    let  df2 = document.createDocumentFragment();
+                    for (let i = 0, l = main_vendor_list.length; i < l; i++) {
+                        let option = document.createElement('div'); // create the option element
+                        option.className = "event__accname--item";
+                        // option.value = vendor_list[i].id; // set the value property
+                        option.setAttribute("data-id", main_vendor_list[i].id);
+                        option.setAttribute("data-name", main_vendor_list[i].title);
+                        option.appendChild(document.createTextNode(main_vendor_list[i].title)); // set the textContent in a safe way.
+                        df2.appendChild(option); // append the option to the document fragment
+                    }
+                    elm2.appendChild(df2);
+
                 }
             }
         }
