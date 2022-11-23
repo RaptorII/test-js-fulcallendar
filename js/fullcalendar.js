@@ -140,9 +140,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     addEventWrapper.classList.add('block-show');
                     bodyId.style.overflow = "hidden";
 
-                    ZOHO.embeddedApp.on("PageLoad", async function(data){
+                    ZOHO.embeddedApp.on("PageLoad", function(data){
                         let vendor_list = [];
-                        await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
+                        ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
                             .then(async function (vendor_detail) {
                                 // console.log("Employee Record=" + vendor_detail.data);
                                 let get_all_vendor = vendor_detail.data;
@@ -169,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 elm1.appendChild(df1);
                             })
                     });
+                    ZOHO.embeddedApp.init().then(r => 'error');
 
                 }
             }
