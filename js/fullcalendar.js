@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         df1.appendChild(option); // append the option to the document fragment
                     }
                     elm1.appendChild(df1);
-                    console.log("df1=" + df1);
+                    // console.log("df1=" + df1);
 
                     /*ZOHO.embeddedApp.on("PageLoad", async function(data){
                         let vendor_list = [];

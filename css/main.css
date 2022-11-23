@@ -1621,3 +1621,16 @@ label[for=event__name] {
     display: flex;
     flex: 1 1 auto;
 }
+
+#event__accname,
+#event__vendor {
+    height: 20vh;
+    overflow: auto;
+    position: relative;
+}
+
+#event__vendor--search,
+#event__accname--search {
+    position: absolute;
+    top: 0;
+}
