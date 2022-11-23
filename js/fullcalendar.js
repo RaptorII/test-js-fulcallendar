@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
             startDate = startDate.toISOString().split('T')[0];
             endDate = endDate.toISOString().split('T')[0];
 
-            console.log(eventData.event.title + " start is now " + startDate.toISOString());
-            console.log(eventData.event.title + " end is now " + endDate.toISOString());
+            console.log(eventData.event.title + " start is now " + startDate);
+            console.log(eventData.event.title + " end is now " + endDate);
 
             // to Zoho
             let eventUpdate = {
@@ -99,8 +99,8 @@ document.addEventListener('DOMContentLoaded', function () {
             startDate = startDate.toISOString().split('T')[0];
             endDate = endDate.toISOString().split('T')[0];
 
-            console.log(eventData.event.title + " start is now " + startDate.toISOString());
-            console.log(eventData.event.title + " end is now " + endDate.toISOString());
+            console.log(eventData.event.title + " start is now " + startDate);
+            console.log(eventData.event.title + " end is now " + endDate);
 
             // to Zoho
             let eventUpdate = {
