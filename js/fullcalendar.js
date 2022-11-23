@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         let filter = evSearch.value.toUpperCase();
                         let evItem = eventVendor.getElementsByClassName('event__vendor--item');
                         for (i = 0; i < evItem.length; i++) {
-                            txtValue = evItem[i].textContent || evItem[i].innerText;
+                            let txtValue = evItem[i].textContent || evItem[i].innerText;
                             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                                 evItem[i].style.display = "";
                             } else {
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         let filter = eanSearch.value.toUpperCase();
                         let eanItem = eventVendor.getElementsByClassName('event__accname--item');
                         for (i = 0; i < eanItem.length; i++) {
-                            txtValue = eanItem[i].textContent || eanItem[i].innerText;
+                            let txtValue = eanItem[i].textContent || eanItem[i].innerText;
                             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                                 eanItem[i].style.display = "";
                             } else {
