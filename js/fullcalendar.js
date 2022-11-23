@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     addEventWrapper.classList.add('block-show');
                     bodyId.style.overflow = "hidden";
 
-                    console.log('main_vendor_list=' + main_vendor_list);
+                    console.log('main_vendor_list=' + JSON.stringify(main_vendor_list));
 
                     /*ZOHO.embeddedApp.on("PageLoad", async function(data){
                         let vendor_list = [];
