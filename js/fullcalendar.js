@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // console.log('main_vendor_list=' + JSON.stringify(main_vendor_list));
 
                     // list of vendors
-                    let elm1 = document.getElementById('event__vendor');
+                    let eventVendor = document.getElementById('event__vendor');
                     let  df1 = document.createDocumentFragment();
                     for (let i = 0, l = main_vendor_list.length; i < l; i++) {
                         let option = document.createElement('div'); // create the option element
@@ -154,12 +154,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         option.appendChild(document.createTextNode(main_vendor_list[i].title)); // set the textContent in a safe way.
                         df1.appendChild(option); // append the option to the document fragment
                     }
-                    elm1.appendChild(df1);
+                    eventVendor.appendChild(df1);
                     // console.log("df1=" + df1);
 
                     // list of accounts
                     //console.log('main_account_list.length: ' + main_account_list.length);
-                    let elm2 = document.getElementById('event__accname');
+                    let eventAccname = document.getElementById('event__accname');
                     let  df2 = document.createDocumentFragment();
                     for (let i = 0, l = main_account_list.length; i < l; i++) {
                         let option = document.createElement('div'); // create the option element
@@ -170,13 +170,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         option.appendChild(document.createTextNode(main_account_list[i].title)); // set the textContent in a safe way.
                         df2.appendChild(option); // append the option to the document fragment
                     }
-                    elm2.appendChild(df2);
+                    eventAccname.appendChild(df2);
 
                     // filter vendors;
                     let evSearch = document.getElementById('event__vendor--search');
                     evSearch.onkeyup = function() {
                         let filter = evSearch.value.toUpperCase();
-                        let evItem = elm1.getElementsByClassName('event__vendor--item');
+                        let evItem = eventVendor.getElementsByClassName('event__vendor--item');
                         for (i = 0; i < evItem.length; i++) {
                             txtValue = evItem[i].textContent || evItem[i].innerText;
                             if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -185,26 +185,24 @@ document.addEventListener('DOMContentLoaded', function () {
                                 evItem[i].style.display = "none";
                             }
                         }
+                    }
 
+                    // filter accnames;
+                    let eanSearch = document.getElementById('event__accname--search');
+                    eanSearch.onkeyup = function() {
+                        let filter = eanSearch.value.toUpperCase();
+                        let eanItem = eventVendor.getElementsByClassName('event__accname--item');
+                        for (i = 0; i < eanItem.length; i++) {
+                            txtValue = eanItem[i].textContent || eanItem[i].innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                eanItem[i].style.display = "";
+                            } else {
+                                eanItem[i].style.display = "none";
+                            }
+                        }
                     }
 
 
-
-                    /*function filterFunction() {
-                        var input, filter, ul, li, a, i;
-                        input = document.getElementById("myInput");
-                        filter = input.value.toUpperCase();
-                        div = document.getElementById("myDropdown");
-                        a = div.getElementsByTagName("a");
-                        for (i = 0; i < a.length; i++) {
-                            txtValue = a[i].textContent || a[i].innerText;
-                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                                a[i].style.display = "";
-                            } else {
-                                a[i].style.display = "none";
-                            }
-                        }
-                    }*/
 
                 }
             }
