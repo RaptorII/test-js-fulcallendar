@@ -159,15 +159,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
                     // list of accounts
+                    console.log('main_accounts_list.length: ' + main_accounts_list.length);
+
                     let elm2 = document.getElementById('event__accname');
                     let  df2 = document.createDocumentFragment();
-                    for (let i = 0, l = main_vendor_list.length; i < l; i++) {
+                    for (let i = 0, l = main_account_list.length; i < l; i++) {
                         let option = document.createElement('div'); // create the option element
                         option.className = "event__accname--item";
                         // option.value = vendor_list[i].id; // set the value property
-                        option.setAttribute("data-id", main_vendor_list[i].id);
-                        option.setAttribute("data-name", main_vendor_list[i].title);
-                        option.appendChild(document.createTextNode(main_vendor_list[i].title)); // set the textContent in a safe way.
+                        option.setAttribute("data-id", main_account_list[i].id);
+                        option.setAttribute("data-name", main_account_list[i].title);
+                        option.appendChild(document.createTextNode(main_account_list[i].title)); // set the textContent in a safe way.
                         df2.appendChild(option); // append the option to the document fragment
                     }
                     elm2.appendChild(df2);
@@ -237,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         account_list.push(account_object);
                     }
                     // console.log('vendor_list: ' +  JSON.stringify(vendor_list));
-                    console.log('get_all_accounts.length: ' + get_all_accounts.length);
+                    // console.log('get_all_accounts.length: ' + get_all_accounts.length);
                     main_account_list = [...main_account_list, ...account_list];
 
                 })
