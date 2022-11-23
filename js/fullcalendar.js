@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     ZOHO.embeddedApp.on("PageLoad", async function(data){
-        // console.log('data= '+data);
+        console.log('data= '+ data);
 
         var vendor_list = [];
         // var jobsheet_list = [];
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                             title: dataZC?.Subject,
                                             start: dataZC?.Start_Date,
                                             end: dataZC?.End_Date,
-                                            // allDay: false, // if option is 'on' then destroi editable
+                                            // allDay: false, // if option is 'true' then destroi editable
                                             editable: true,
                                             description: dataZC?.Subject,
                                         });
