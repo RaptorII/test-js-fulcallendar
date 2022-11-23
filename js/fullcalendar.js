@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     addEventWrapper.classList.add('block-show');
                     bodyId.style.overflow = "hidden";
 
-                    console.log('main_vendor_list=' + JSON.stringify(main_vendor_list));
+                    // console.log('main_vendor_list=' + JSON.stringify(main_vendor_list));
 
                     // list of vendors
                     let elm1 = document.getElementById('event__vendor');
@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         df1.appendChild(option); // append the option to the document fragment
                     }
                     elm1.appendChild(df1);
+                    console.log("df1=" + df1);
 
                     /*ZOHO.embeddedApp.on("PageLoad", async function(data){
                         let vendor_list = [];
