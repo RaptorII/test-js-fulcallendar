@@ -140,7 +140,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     addEventWrapper.classList.add('block-show');
                     bodyId.style.overflow = "hidden";
 
-                    ZOHO.embeddedApp.on("PageLoad", async function(data){
+                    console.log('main_vendor_list=' + main_vendor_list);
+
+                    /*ZOHO.embeddedApp.on("PageLoad", async function(data){
                         let vendor_list = [];
                         await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
                             .then( async function (vendor_detail) {
@@ -170,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             })
                     });
                     ZOHO.embeddedApp.init().then(r => 'error');
-
+                    */
                 }
             }
         }
@@ -186,10 +188,12 @@ document.addEventListener('DOMContentLoaded', function () {
         bodyId.style.overflow = "auto";
     }
 
-    ZOHO.embeddedApp.on("PageLoad", async function(data){
-        console.log('data= '+ data);
+    let main_vendor_list = [];
 
-        var vendor_list = [];
+    ZOHO.embeddedApp.on("PageLoad", async function(data){
+        // console.log('data= '+ JSON.stringify(data));
+
+        let vendor_list = [];
         // var jobsheet_list = [];
          await ZOHO.CRM.API.getAllRecords({ Entity: "Vendors", sort_order: "asc", per_page: 100, page: 1 })
             .then(async function (vendor_detail) {
@@ -203,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     vendor_list.push(vendor_object);
                 }
                 // console.log('vendor_list: ' +  JSON.stringify(vendor_list));
+                main_vendor_list = vendor_list;
 
                 // list of vendors
                 let elm = document.getElementById('employee_option');
