@@ -1625,7 +1625,7 @@ label[for=event__name] {
     flex: 1 1 auto;
 }
 
-#product__accname,
+#event__product,
 #event__accname,
 #event__vendor {
     height: 15vh;
