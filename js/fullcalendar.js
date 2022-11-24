@@ -249,6 +249,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                 editable: true,
                                 description: eventName,
                             });
+
+                            let eventDataZoho = {
+                                "Start_Date": eventDateS,
+                                "End_Date": eventDateE,
+                                "Vendor": vendorSelectId,
+                                "Subject": eventName,
+                                "Account_Name": accNameSelectId,
+                            }
+                            ZOHO.CRM.API.insertRecord({
+                                Entity: "Sales_Orders",
+                                APIData: eventDataZoho
+                            }).then( function(data) {
+                                console.log(data);
+                            });
+
                         }
                     }
                 }
