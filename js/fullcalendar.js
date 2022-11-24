@@ -208,6 +208,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     for (let i = 0; i < selectVendorItems.length; i++) {
                         selectVendorItems[i].addEventListener('click', function () {
+                            console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
+
                             evSearch.value = this.value;
                             vendorSelectId = this.getAttribute('data-id');
                         });
@@ -218,6 +220,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     for (let i = 0; i < selectAccNameItems.length; i++) {
                         selectAccNameItems[i].addEventListener('click', function () {
+                            console.log('selectAccNameItems[i]' + this.getAttribute('data-id'));
+
                             eanSearch.value = selectAccNameItems[i].value;
                             accNameSelectId = selectAccNameItems[i].getAttribute('data-id');
                         });
