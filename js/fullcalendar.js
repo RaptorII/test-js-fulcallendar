@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for(let page = 0; page <= 10; page++) {
             await ZOHO.CRM.API.getAllRecords({Entity: "Accounts", sort_order: "asc", per_page: 200, page: page })
                 .then(async function (account_detail) {
-                    if ( account_detail.data.length !== undefined ) {
+                    if ( account_detail.data.length  ) {
                         let get_all_accounts = account_detail.data;
                         for (let i = 0, l = get_all_accounts.length; i < l; i++) {
                             let account_object = {};
