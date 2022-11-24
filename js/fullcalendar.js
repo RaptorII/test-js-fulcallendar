@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     evSearch.onkeyup = function() {
                         let filter = evSearch.value.toUpperCase();
                         let evItem = eventVendor.getElementsByClassName('event__vendor--item');
-                        for (i = 0; i < evItem.length; i++) {
+                        for (let i = 0; i < evItem.length; i++) {
                             let txtValue = evItem[i].textContent || evItem[i].innerText;
                             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                                 evItem[i].style.display = "";
