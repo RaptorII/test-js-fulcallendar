@@ -1605,6 +1605,8 @@ label[for=datepicker-end] {
     padding-left: 20px;
 }
 
+label[for=event__accname--search],
+label[for=event__vendor--search],
 label[for=datepicker-start],
 label[for=datepicker-end],
 label[for=event__name] {
