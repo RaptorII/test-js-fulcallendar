@@ -308,8 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 })
         }
-        let unicData = [...new Set(main_account_list)];
-        main_account_list = unicData;
+        main_account_list = [...new Set(main_account_list)];
 
     })
     ZOHO.embeddedApp.init();
