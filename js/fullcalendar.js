@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         eventDateS = eventDateS.toISOString().split('T')[0];
                         eventDateE = eventDateE.toISOString().split('T')[0];
 
-                        if (isNaN(eventDateS.valueOf()) && isNaN(eventDateE.valueOf())) { // valid?
+                        if (isNaN(eventDateS) && isNaN(eventDateE)) { // valid?
                             alert('Invalid date.');
                         } else if(!eventName) {
                             alert('Invalid name of event.');
