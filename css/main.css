@@ -883,7 +883,7 @@ A HORIZONTAL event
   }
 .fc-daygrid-block-event .fc-event-time,
   .fc-daygrid-block-event .fc-event-title {
-    padding: 1px;
+    padding: 1px 5px;
   }
 /* --- the dot style of event --- */
 .fc-daygrid-dot-event {
@@ -1634,4 +1634,10 @@ label[for=event__name] {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.event__vendor--item,
+.event__accname--item {
+    margin: 2px;
+    cursor: pointer;
 }
