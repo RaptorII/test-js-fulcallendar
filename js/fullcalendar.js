@@ -126,26 +126,10 @@ document.addEventListener('DOMContentLoaded', function () {
             addEventButton: {
                 text: 'add event...',
                 click: function() {
-                    /*var dateStr = prompt('Enter a date in YYYY-MM-DD format');
-                    var date = new Date(dateStr + 'T00:00:00'); // will be in local time
-
-                    if (!isNaN(date.valueOf())) { // valid?
-                        calendar.addEvent({
-                            title: 'dynamic event',
-                            start: date,
-                            allDay: true
-                        });
-                        alert('Great. Now, update your database...');
-                    } else {
-                        alert('Invalid date.');
-                    }*/
-
                     // addEventWrapper.style.visibility = "visible";
                     addEventWrapper.classList.remove('block-none');
                     addEventWrapper.classList.add('block-show');
                     bodyId.style.overflow = "hidden";
-
-                    // console.log('main_vendor_list=' + JSON.stringify(main_vendor_list));
 
                     // list of vendors
                     let eventVendor = document.getElementById('event__vendor');
@@ -162,7 +146,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventVendor.appendChild(df1);
 
                     // list of accounts
-
                     let eventAccname = document.getElementById('event__accname');
                     let  df2 = document.createDocumentFragment();
                     for (let i = 0, l = main_account_list.length; i < l; i++) {
@@ -207,12 +190,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
                     /**/
-
                     let selectVendorItems = document.getElementsByClassName('event__vendor--item');
                     for (let i = 0; i < selectVendorItems.length; i++) {
                         selectVendorItems[i].addEventListener('click', function () {
-                            console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
-
+                            // console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
                             let evSearch1 = document.getElementById('event__vendor--search');
                             evSearch1.value = this.getAttribute('data-name');
                             vendorSelectId = this.getAttribute('data-id');
@@ -222,14 +203,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     let selectAccNameItems = document.getElementsByClassName('event__accname--item');
                     for (let i = 0; i < selectAccNameItems.length; i++) {
                         selectAccNameItems[i].addEventListener('click', function () {
-                            console.log('selectAccNameItems[i]=' + this.getAttribute('data-id'));
-
+                            // console.log('selectAccNameItems[i]=' + this.getAttribute('data-id'));
                             let eanSearch1 = document.getElementById('event__accname--search');
                             eanSearch1.value = selectAccNameItems[i].getAttribute('data-name');
                             accNameSelectId = selectAccNameItems[i].getAttribute('data-id');
                         });
                     }
-
                     /**/
 
                     let okBtn = document.getElementById('add-event__btn');
@@ -243,8 +222,29 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.log('eventName=' + eventName);
                         console.log('vendorSelect=' + vendorSelectId);
                         console.log('accNameSelect=' + accNameSelectId);
-                    }
 
+                        let eventDateS = new Date(startDate + 'T00:00:00');
+                        let eventDateE = new Date(endDate + 'T00:00:00');
+
+                        if (isNaN(eventDateS.valueOf()) && isNaN(eventDateE.valueOf())) { // valid?
+                            alert('Invalid date.');
+                        } else if(!eventName.value) {
+                            alert('Invalid name of event.');
+                        } else if(!vendorSelectId.value) {
+                            alert('Please select Vendor.');
+                        } else if(!accNameSelectId.value) {
+                            alert('Please select Account.');
+                        } else {
+                            calendar.addEvent({
+                                id: vendorSelectId,
+                                title: eventName,
+                                start: eventDateS,
+                                end: eventDateE,
+                                editable: true,
+                                description: eventName,
+                            });
+                        }
+                    }
                 }
             }
         }
