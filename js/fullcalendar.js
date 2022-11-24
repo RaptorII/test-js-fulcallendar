@@ -4,14 +4,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let addEventWrapper = document.getElementById('add-event');
     let bodyId = document.getElementById('body-id');
 
-    let datePickerS = MCDatepicker.create(
+    let datePickerS = document.getElementById('datepicker-start');
+    MCDatepicker.create(
         {
             el: '#datepicker-start',
             bodyType: 'inline',
             closeOnBlur: true,
             dateFormat: 'YYYY-MM-DD'
         });
-    let datePickerE = MCDatepicker.create(
+    let datePickerE = document.getElementById('datepicker-end');
+    MCDatepicker.create(
         {
             el: '#datepicker-end',
             bodyType: 'inline',
