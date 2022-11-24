@@ -1606,6 +1606,7 @@ label[for=datepicker-end] {
 }
 
 label[for=event__accname--search],
+label[for=event__product--search],
 label[for=event__vendor--search],
 label[for=datepicker-start],
 label[for=datepicker-end],

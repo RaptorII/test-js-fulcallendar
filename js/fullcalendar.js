@@ -250,12 +250,18 @@ document.addEventListener('DOMContentLoaded', function () {
                                 description: eventName,
                             });
 
+                            let productDetail = {
+                                "quant1ty": '',
+                                "id": '',
+                            }
+
                             let eventDataZoho = {
                                 "Start_Date": eventDateS,
                                 "End_Date": eventDateE,
                                 "Vendor": vendorSelectId,
                                 "Subject": eventName,
                                 "Account_Name": accNameSelectId,
+                                "Product_Details": [productDetail],
                             }
                             ZOHO.CRM.API.insertRecord({
                                 Entity: "Sales_Orders",
