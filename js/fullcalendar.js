@@ -203,7 +203,35 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
 
+                    /**/
 
+                    let selectVendorItems = document.getElementsByClassName('event__vendor--item');
+                    let vendorSelectId;
+
+                    for (let i = 0; i < selectVendorItems.length; i++) {
+                        selectVendorItems[i].addEventListener('click', function () {
+                            console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
+
+                            let evSearch1 = document.getElementById('event__vendor--search');
+                            evSearch1.value = this.getAttribute('data-name');
+                            vendorSelectId = this.getAttribute('data-id');
+                        });
+                    }
+
+                    let selectAccNameItems = document.getElementsByClassName('event__accname--item');
+                    let accNameSelectId;
+
+                    for (let i = 0; i < selectAccNameItems.length; i++) {
+                        selectAccNameItems[i].addEventListener('click', function () {
+                            console.log('selectAccNameItems[i]=' + this.getAttribute('data-id'));
+
+                            let eanSearch1 = document.getElementById('event__accname--search');
+                            eanSearch1.value = selectAccNameItems[i].getAttribute('data-name');
+                            accNameSelectId = selectAccNameItems[i].getAttribute('data-id');
+                        });
+                    }
+
+                    /**/
 
                     let okBtn = document.getElementById('add-event__btn');
                     okBtn.onclick = function() {
@@ -234,35 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
         bodyId.style.overflow = "auto";
     }
 
-    /**/
 
-    let selectVendorItems = document.getElementsByClassName('event__vendor--item');
-    let vendorSelectId;
-
-    for (let i = 0; i < selectVendorItems.length; i++) {
-        selectVendorItems[i].addEventListener('click', function () {
-            console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
-
-            let evSearch1 = document.getElementById('event__vendor--search');
-            evSearch1.value = this.getAttribute('data-name');
-            vendorSelectId = this.getAttribute('data-id');
-        });
-    }
-
-    let selectAccNameItems = document.getElementsByClassName('event__accname--item');
-    let accNameSelectId;
-
-    for (let i = 0; i < selectAccNameItems.length; i++) {
-        selectAccNameItems[i].addEventListener('click', function () {
-            console.log('selectAccNameItems[i]=' + this.getAttribute('data-id'));
-
-            let eanSearch1 = document.getElementById('event__accname--search');
-            eanSearch1.value = selectAccNameItems[i].getAttribute('data-name');
-            accNameSelectId = selectAccNameItems[i].getAttribute('data-id');
-        });
-    }
-
-    /**/
 
 
     let main_vendor_list = [];
