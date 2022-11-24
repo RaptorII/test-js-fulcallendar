@@ -225,12 +225,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         let eventDateS = new Date(startDate + 'T00:00:00');
                         let eventDateE = new Date(endDate + 'T00:00:00');
-                        eventDateS = new Date(eventDateS.getTime() - (offset*60*1000));
-                        eventDateE = new Date(eventDateE.getTime() - (offset*60*1000));
-                        eventDateS = eventDateS.toISOString().split('T')[0];
-                        eventDateE = eventDateE.toISOString().split('T')[0];
 
-                        if (isNaN(eventDateS) && isNaN(eventDateE)) { // valid?
+                        if (isNaN(eventDateS.valueOf()) && isNaN(eventDateE.valueOf())) { // valid?
                             alert('Invalid date.');
                         } else if(!eventName) {
                             alert('Invalid name of event.');
@@ -239,6 +235,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         } else if(!accNameSelectId) {
                             alert('Please select Account.');
                         } else {
+
+                            eventDateS = new Date(eventDateS.getTime() - (offset*60*1000));
+                            eventDateE = new Date(eventDateE.getTime() - (offset*60*1000));
+                            eventDateS = eventDateS.toISOString().split('T')[0];
+                            eventDateE = eventDateE.toISOString().split('T')[0];
+
                             calendar.addEvent({
                                 id: vendorSelectId,
                                 title: eventName,
