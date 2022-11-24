@@ -1590,7 +1590,7 @@ body {
 .add-event__vendor{
     padding-bottom : 20px;
 }
-.add-event__btn {
+#add-event__btn {
     margin-left: auto;
     display: block;
 }
