@@ -159,6 +159,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                     eventAccname.appendChild(df2);
 
+                    // list of products
+                    let eventProduct = document.getElementById('event__product');
+                    let  df3 = document.createDocumentFragment();
+                    for (let i = 0, l = main_product_list.length; i < l; i++) {
+                        let option = document.createElement('div'); // create the option element
+                        option.className = "event__product--item";
+                        option.setAttribute("data-id", main_product_list[i].id);
+                        option.setAttribute("data-name", main_product_list[i].title);
+                        option.appendChild(document.createTextNode(main_product_list[i].title)); // set the textContent in a safe way.
+                        df3.appendChild(option); // append the option to the document fragment
+                    }
+                    eventProduct.appendChild(df3);
+
                     // filter vendors;
                     let evSearch = document.getElementById('event__vendor--search');
                     evSearch.onkeyup = function() {
@@ -286,11 +299,9 @@ document.addEventListener('DOMContentLoaded', function () {
         bodyId.style.overflow = "auto";
     }
 
-
-
-
     let main_vendor_list = [];
     let main_account_list = [];
+    let main_product_list = [];
 
     ZOHO.embeddedApp.on("PageLoad", async function(data){
         // console.log('data= '+ JSON.stringify(data));
@@ -303,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // console.log(vendor_detail.data);
                 let get_all_vendor = vendor_detail.data;
                 for (let i = 0, l = get_all_vendor.length; i < l; i++) {
-                    var vendor_object = {};
+                    let vendor_object = {};
                     vendor_object.id = get_all_vendor[i].id;
                     vendor_object.title = get_all_vendor[i].Vendor_Name;
                     vendor_list.push(vendor_object);
@@ -348,6 +359,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
         }
         main_account_list = [...new Set(main_account_list)];
+
+        let product_list = [];
+        for(let page = 0; page <= 4; page++) {
+            await ZOHO.CRM.API.getAllRecords({Entity: "Products", sort_order: "asc", per_page: 200, page: page })
+                .then(async function (product_detail) {
+                    if ( product_detail.data?.length  ) {
+                        let get_all_products = product_detail.data;
+                        for (let i = 0, l = get_all_products.length; i < l; i++) {
+                            let product_object = {};
+                            product_object.id = get_all_products[i].id;
+                            product_object.title = get_all_products[i].Product_Name;
+                            product_list.push(product_object);
+                        }
+                        if( product_list.length !== undefined ) {
+                            main_product_list = main_product_list.concat(product_list);
+                        }
+                    }
+                })
+        }
+        main_product_list = [...new Set(main_product_list)];
 
     })
     ZOHO.embeddedApp.init();
