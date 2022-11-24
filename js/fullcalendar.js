@@ -155,10 +155,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         df1.appendChild(option); // append the option to the document fragment
                     }
                     eventVendor.appendChild(df1);
-                    // console.log("df1=" + df1);
 
                     // list of accounts
-                    //console.log('main_account_list.length: ' + main_account_list.length);
                     let eventAccname = document.getElementById('event__accname');
                     let  df2 = document.createDocumentFragment();
                     for (let i = 0, l = main_account_list.length; i < l; i++) {
@@ -202,12 +200,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
 
-
+                    let okBtn = document.getElementById('add-event__btn');
+                    okBtn.onclick = function() {
+                        let startDate = datePickerS.value;
+                        let endDate = datePickerE.value;
+                        console.log('startDate=' + startDate);
+                        console.log('endDate=' + endDate);
+                    }
 
                 }
             }
         }
-
     });
     calendar.render();
 
