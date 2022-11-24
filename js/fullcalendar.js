@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let vendorSelectId;
     let accNameSelectId;
 
+    const offset = (new Date()).getTimezoneOffset();
+
     let datePickerS = document.getElementById('datepicker-start');
     MCDatepicker.create(
         {
@@ -67,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("dropped");
             // console.log("eventData" + JSON.stringify(eventData));
 
-            const offset = (new Date()).getTimezoneOffset();
             let startDate = new Date(eventData.event.start.getTime() - (offset*60*1000));
             let endDate = new Date(eventData.event.end.getTime() - (offset*60*1000));
 
@@ -98,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("resize");
             // console.log("eventData" + JSON.stringify(eventData));
 
-            const offset = (new Date()).getTimezoneOffset();
             let startDate = new Date(eventData.event.start.getTime() - (offset*60*1000));
             let endDate = new Date(eventData.event.end.getTime() - (offset*60*1000));
             startDate = startDate.toISOString().split('T')[0];
@@ -223,8 +223,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.log('vendorSelect=' + vendorSelectId);
                         console.log('accNameSelect=' + accNameSelectId);
 
-                        let eventDateS = new Date(startDate + 'T00:00:00');
-                        let eventDateE = new Date(endDate + 'T00:00:00');
+                        let eventDateS = new Date(startDate - (offset*60*1000));
+                        let eventDateE = new Date(endDate - (offset*60*1000));
 
                         if (isNaN(eventDateS.valueOf()) && isNaN(eventDateE.valueOf())) { // valid?
                             alert('Invalid date.');
