@@ -159,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventVendor.appendChild(df1);
 
                     // list of accounts
+                    main_account_list = [...new Set(main_account_list)];
                     let eventAccname = document.getElementById('event__accname');
                     let  df2 = document.createDocumentFragment();
                     for (let i = 0, l = main_account_list.length; i < l; i++) {
@@ -307,6 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 })
         }
+
     })
     ZOHO.embeddedApp.init();
 
