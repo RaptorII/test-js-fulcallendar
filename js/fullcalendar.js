@@ -206,8 +206,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     okBtn.onclick = function() {
                         let startDate = datePickerS.value;
                         let endDate = datePickerE.value;
+                        let eventName = document.getElementById('event__name').value;
+
                         console.log('startDate=' + startDate);
                         console.log('endDate=' + endDate);
+                        console.log('eventName=' + eventName);
                     }
 
                 }
