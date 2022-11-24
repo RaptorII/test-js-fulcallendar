@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('start input');
+    console.log('start FullCallendar');
 
     let addEventWrapper = document.getElementById('add-event');
     let bodyId = document.getElementById('body-id');
@@ -202,15 +202,39 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
 
+                    let selectVendorItems = eventAccname.getElementsByClassName('event__vendor--item');
+                    let vendorSelectId;
+
+                    for (let i = 0; i < selectVendorItems.length; i++) {
+                        selectVendorItems[i].addEventListener('click', function () {
+                            evSearch.value = this.value;
+                            vendorSelectId = this.getAttribute('data-id');
+                        });
+                    }
+
+                    let selectAccNameItems = eventAccname.getElementsByClassName('event__accname--item');
+                    let accNameSelectId;
+
+                    for (let i = 0; i < selectAccNameItems.length; i++) {
+                        selectAccNameItems[i].addEventListener('click', function () {
+                            eanSearch.value = this.value;
+                            accNameSelectId = this.getAttribute('data-id');
+                        });
+                    }
+
                     let okBtn = document.getElementById('add-event__btn');
                     okBtn.onclick = function() {
                         let startDate = datePickerS.value;
                         let endDate = datePickerE.value;
                         let eventName = document.getElementById('event__name').value;
+                        let vendorSelectId = vendorSelectId;
+                        let accNameSelectId = accNameSelectId;
 
                         console.log('startDate=' + startDate);
                         console.log('endDate=' + endDate);
                         console.log('eventName=' + eventName);
+                        console.log('vendorSelect=' + vendorSelectId);
+                        console.log('accNameSelect=' + accNameSelectId);
                     }
 
                 }
@@ -239,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(async function (vendor_detail) {
                 // console.log("Employee Record");
                 // console.log(vendor_detail.data);
-                var get_all_vendor = vendor_detail.data;
+                let get_all_vendor = vendor_detail.data;
                 for (let i = 0, l = get_all_vendor.length; i < l; i++) {
                     var vendor_object = {};
                     vendor_object.id = get_all_vendor[i].id;
