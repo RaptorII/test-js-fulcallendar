@@ -241,11 +241,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for (let i = 0; i < selectVendorItems.length; i++) {
         selectVendorItems[i].addEventListener('click', function () {
+            console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
+
             let evSearch = document.getElementById('event__vendor--search');
             evSearch.value = this.getAttribute('data-name');
             vendorSelectId = this.getAttribute('data-id');
-
-            console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
         });
     }
 
@@ -254,11 +254,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for (let i = 0; i < selectAccNameItems.length; i++) {
         selectAccNameItems[i].addEventListener('click', function () {
+            console.log('selectAccNameItems[i]=' + this.getAttribute('data-id'));
+
             let eanSearch = document.getElementById('event__accname--search');
             eanSearch.value = selectAccNameItems[i].getAttribute('data-name');
             accNameSelectId = selectAccNameItems[i].getAttribute('data-id');
-
-            console.log('selectAccNameItems[i]' + this.getAttribute('data-id'));
         });
     }
 
