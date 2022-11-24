@@ -238,8 +238,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         let startDate = datePickerS.value;
                         let endDate = datePickerE.value;
                         let eventName = document.getElementById('event__name').value;
-                        let vendorSelectId = vendorSelectId;
-                        let accNameSelectId = accNameSelectId;
 
                         console.log('startDate=' + startDate);
                         console.log('endDate=' + endDate);
