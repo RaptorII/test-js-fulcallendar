@@ -243,8 +243,8 @@ document.addEventListener('DOMContentLoaded', function () {
         selectVendorItems[i].addEventListener('click', function () {
             console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
 
-            let evSearch = document.getElementById('event__vendor--search');
-            evSearch.value = this.getAttribute('data-name');
+            let evSearch1 = document.getElementById('event__vendor--search');
+            evSearch1.value = this.getAttribute('data-name');
             vendorSelectId = this.getAttribute('data-id');
         });
     }
@@ -256,8 +256,8 @@ document.addEventListener('DOMContentLoaded', function () {
         selectAccNameItems[i].addEventListener('click', function () {
             console.log('selectAccNameItems[i]=' + this.getAttribute('data-id'));
 
-            let eanSearch = document.getElementById('event__accname--search');
-            eanSearch.value = selectAccNameItems[i].getAttribute('data-name');
+            let eanSearch1 = document.getElementById('event__accname--search');
+            eanSearch1.value = selectAccNameItems[i].getAttribute('data-name');
             accNameSelectId = selectAccNameItems[i].getAttribute('data-id');
         });
     }
