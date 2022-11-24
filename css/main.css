@@ -1631,7 +1631,8 @@ label[for=event__name] {
 
 #event__vendor--search,
 #event__accname--search {
-    position: absolute;
+    /*position: absolute;*/
+    display: inline-block;
     top: 0;
     right: 0;
 }
