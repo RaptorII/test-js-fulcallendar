@@ -223,8 +223,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.log('vendorSelect=' + vendorSelectId);
                         console.log('accNameSelect=' + accNameSelectId);
 
-                        let eventDateS = new Date(startDate - (offset*60*1000));
-                        let eventDateE = new Date(endDate - (offset*60*1000));
+                        let eventDateS = new Date(startDate.getTime() - (offset*60*1000));
+                        let eventDateE = new Date(endDate.getTime() - (offset*60*1000));
+                        eventDateS = eventDateS.toISOString().split('T')[0];
+                        eventDateE = eventDateE.toISOString().split('T')[0];
 
                         if (isNaN(eventDateS.valueOf()) && isNaN(eventDateE.valueOf())) { // valid?
                             alert('Invalid date.');
