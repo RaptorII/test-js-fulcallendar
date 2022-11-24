@@ -203,29 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
 
-                    let selectVendorItems = eventVendor.getElementsByClassName('event__vendor--item');
-                    let vendorSelectId;
 
-                    for (let i = 0; i < selectVendorItems.length; i++) {
-                        selectVendorItems[i].addEventListener('click', function () {
-                            console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
-
-                            evSearch.value = this.value;
-                            vendorSelectId = this.getAttribute('data-id');
-                        });
-                    }
-
-                    let selectAccNameItems = eventAccname.getElementsByClassName('event__accname--item');
-                    let accNameSelectId;
-
-                    for (let i = 0; i < selectAccNameItems.length; i++) {
-                        selectAccNameItems[i].addEventListener('click', function () {
-                            console.log('selectAccNameItems[i]' + this.getAttribute('data-id'));
-
-                            eanSearch.value = selectAccNameItems[i].value;
-                            accNameSelectId = selectAccNameItems[i].getAttribute('data-id');
-                        });
-                    }
 
                     let okBtn = document.getElementById('add-event__btn');
                     okBtn.onclick = function() {
@@ -255,6 +233,35 @@ document.addEventListener('DOMContentLoaded', function () {
         addEventWrapper.classList.add('block-none');
         bodyId.style.overflow = "auto";
     }
+
+    /**/
+
+    let selectVendorItems = document.getElementsByClassName('event__vendor--item');
+    let vendorSelectId;
+
+    for (let i = 0; i < selectVendorItems.length; i++) {
+        selectVendorItems[i].addEventListener('click', function () {
+            console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
+
+            // evSearch.value = this.value;
+            vendorSelectId = this.getAttribute('data-id');
+        });
+    }
+
+    let selectAccNameItems = document.getElementsByClassName('event__accname--item');
+    let accNameSelectId;
+
+    for (let i = 0; i < selectAccNameItems.length; i++) {
+        selectAccNameItems[i].addEventListener('click', function () {
+            console.log('selectAccNameItems[i]' + this.getAttribute('data-id'));
+
+            // eanSearch.value = selectAccNameItems[i].value;
+            accNameSelectId = selectAccNameItems[i].getAttribute('data-id');
+        });
+    }
+
+    /**/
+
 
     let main_vendor_list = [];
     let main_account_list = [];
