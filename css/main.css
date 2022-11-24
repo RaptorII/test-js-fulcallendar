@@ -1633,7 +1633,7 @@ label[for=event__name] {
     position: relative;
 }
 
-#event__product--search,
+/*#event__product--search,*/
 #event__vendor--search,
 #event__accname--search {
     /*position: absolute;*/
