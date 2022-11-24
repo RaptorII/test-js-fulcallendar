@@ -1610,7 +1610,7 @@ label[for=event__vendor--search],
 label[for=datepicker-start],
 label[for=datepicker-end],
 label[for=event__name] {
-    width: 100px;
+    width: 115px;
 }
 
 .add-event__name,
@@ -1634,9 +1634,8 @@ label[for=event__name] {
 #event__vendor--search,
 #event__accname--search {
     /*position: absolute;*/
-    display: inline-block;
-    top: 0;
-    right: 0;
+    display: block;
+    width: 100%;
 }
 
 .event__vendor--item,
