@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     eanSearch.onkeyup = function() {
                         let filter = eanSearch.value.toUpperCase();
                         let eanItem = eventAccname.getElementsByClassName('event__accname--item');
-                        for (i = 0; i < eanItem.length; i++) {
+                        for (let i = 0; i < eanItem.length; i++) {
                             let txtValue = eanItem[i].textContent || eanItem[i].innerText;
                             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                                 eanItem[i].style.display = "";
