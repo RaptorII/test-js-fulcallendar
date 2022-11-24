@@ -160,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventAccname.appendChild(df2);
 
                     // list of products
+                    console.log(main_product_list);
                     let eventProduct = document.getElementById('event__product');
                     let  df3 = document.createDocumentFragment();
                     for (let i = 0, l = main_product_list.length; i < l; i++) {
