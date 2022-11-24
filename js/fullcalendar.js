@@ -228,11 +228,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         if (isNaN(eventDateS.valueOf()) && isNaN(eventDateE.valueOf())) { // valid?
                             alert('Invalid date.');
-                        } else if(!eventName.value) {
+                        } else if(!eventName) {
                             alert('Invalid name of event.');
-                        } else if(!vendorSelectId.value) {
+                        } else if(!vendorSelectId) {
                             alert('Please select Vendor.');
-                        } else if(!accNameSelectId.value) {
+                        } else if(!accNameSelectId) {
                             alert('Please select Account.');
                         } else {
                             calendar.addEvent({
