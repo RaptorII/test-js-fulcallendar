@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let addEventWrapper = document.getElementById('add-event');
     let bodyId = document.getElementById('body-id');
 
+    let vendorSelectId;
+    let accNameSelectId;
+
     let datePickerS = document.getElementById('datepicker-start');
     MCDatepicker.create(
         {
@@ -206,8 +209,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     /**/
 
                     let selectVendorItems = document.getElementsByClassName('event__vendor--item');
-                    let vendorSelectId;
-
                     for (let i = 0; i < selectVendorItems.length; i++) {
                         selectVendorItems[i].addEventListener('click', function () {
                             console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
@@ -219,8 +220,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
 
                     let selectAccNameItems = document.getElementsByClassName('event__accname--item');
-                    let accNameSelectId;
-
                     for (let i = 0; i < selectAccNameItems.length; i++) {
                         selectAccNameItems[i].addEventListener('click', function () {
                             console.log('selectAccNameItems[i]=' + this.getAttribute('data-id'));
