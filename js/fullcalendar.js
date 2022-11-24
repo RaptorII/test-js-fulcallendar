@@ -191,10 +191,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     let eanSearch = document.getElementById('event__accname--search');
                     eanSearch.onkeyup = function() {
                         let filter = eanSearch.value.toUpperCase();
-                        let eanItem = eventVendor.getElementsByClassName('event__accname--item');
+                        let eanItem = eventAccname.getElementsByClassName('event__accname--item');
                         for (i = 0; i < eanItem.length; i++) {
-                            let txtValue1 = eanItem[i].textContent || eanItem[i].innerText;
-                            if (txtValue1.toUpperCase().indexOf(filter) > -1) {
+                            let txtValue = eanItem[i].textContent || eanItem[i].innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
                                 eanItem[i].style.display = "";
                             } else {
                                 eanItem[i].style.display = "none";

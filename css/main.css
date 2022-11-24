@@ -1633,4 +1633,5 @@ label[for=event__name] {
 #event__accname--search {
     position: absolute;
     top: 0;
+    right: 0;
 }
