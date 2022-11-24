@@ -223,8 +223,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.log('vendorSelect=' + vendorSelectId);
                         console.log('accNameSelect=' + accNameSelectId);
 
-                        let eventDateS = new Date(startDate.getTime() - (offset*60*1000));
-                        let eventDateE = new Date(endDate.getTime() - (offset*60*1000));
+                        let eventDateS = new Date(startDate + 'T00:00:00');
+                        let eventDateE = new Date(endDate + 'T00:00:00');
+                        eventDateS = new Date(eventDateS.getTime() - (offset*60*1000));
+                        eventDateE = new Date(eventDateE.getTime() - (offset*60*1000));
                         eventDateS = eventDateS.toISOString().split('T')[0];
                         eventDateE = eventDateE.toISOString().split('T')[0];
 
