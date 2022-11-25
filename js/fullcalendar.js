@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             });
 
                             let productDetail = {
-                                "quant1ty": quantity,
+                                "quantity": quantity,
                                 "id": productSelectId,
                             }
 
