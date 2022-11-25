@@ -318,7 +318,18 @@ document.addEventListener('DOMContentLoaded', function () {
                                 APIData: eventDataZoho
                             }).then( function(data) {
                                 console.log(data);
-                                console.log(data.data[0].details.id);
+                                // console.log(data.data[0].details.id);
+                                if (data.data[0].details.id) {
+                                    ZOHO.CRM.API.insertRecord({
+                                        Entity: "JobsheetXVendor",
+                                        APIData: {
+                                            "Jobsheet": data.data[0].details.id,
+                                            "Vendor": vendorSelectId,
+                                        }
+                                    }).then( function(dataJXV) {
+                                        console.log(dataJXV);
+                                    });
+                                }
                             });
 
                         }
