@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let vendorSelectId;
     let accNameSelectId;
+    let productSelectId;
 
     const offset = (new Date()).getTimezoneOffset();
 
@@ -160,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     eventAccname.appendChild(df2);
 
                     // list of products
-                    console.log(main_product_list);
+                    //console.log(main_product_list);
                     let eventProduct = document.getElementById('event__product');
                     let  df3 = document.createDocumentFragment();
                     for (let i = 0, l = main_product_list.length; i < l; i++) {
@@ -203,6 +204,21 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
 
+                    // filter Product;
+                    let epSearch = document.getElementById('event__accname--search');
+                    epSearch.onkeyup = function() {
+                        let filter = epSearch.value.toUpperCase();
+                        let epItem = eventProduct.getElementsByClassName('event__product--item');
+                        for (let i = 0; i < epItem.length; i++) {
+                            let txtValue = epItem[i].textContent || epItem[i].innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                epItem[i].style.display = "";
+                            } else {
+                                epItem[i].style.display = "none";
+                            }
+                        }
+                    }
+
                     /**/
                     let selectVendorItems = document.getElementsByClassName('event__vendor--item');
                     for (let i = 0; i < selectVendorItems.length; i++) {
@@ -223,6 +239,16 @@ document.addEventListener('DOMContentLoaded', function () {
                             accNameSelectId = selectAccNameItems[i].getAttribute('data-id');
                         });
                     }
+
+                    let selectProductItems = document.getElementsByClassName('event__product--item');
+                    for (let i = 0; i < selectProductItems.length; i++) {
+                        selectProductItems[i].addEventListener('click', function () {
+                            // console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
+                            let epSearch1 = document.getElementById('event__product--search');
+                            epSearch1.value = this.getAttribute('data-name');
+                            productSelectId = this.getAttribute('data-id');
+                        });
+                    }
                     /**/
 
                     let okBtn = document.getElementById('add-event__btn');
@@ -230,6 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         let startDate = datePickerS.value;
                         let endDate = datePickerE.value;
                         let eventName = document.getElementById('event__name').value;
+                        let quantity = document.getElementById('event__product--quantity').value;
 
                         console.log('startDate=' + startDate);
                         console.log('endDate=' + endDate);
@@ -265,8 +292,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             });
 
                             let productDetail = {
-                                "quant1ty": '',
-                                "id": '',
+                                "quant1ty": quantity,
+                                "id": productSelectId,
                             }
 
                             let eventDataZoho = {
