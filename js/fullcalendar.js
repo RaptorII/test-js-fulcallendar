@@ -299,10 +299,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             });
 
                             let productDetail = {
-                                "Product": [{
+                                "product": {
                                     "quantity": quantity,
                                     "id": productSelectId,
-                                }]
+                                }
                             }
 
                             let eventDataZoho = {
