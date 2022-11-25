@@ -263,6 +263,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.log('eventName=' + eventName);
                         console.log('vendorSelect=' + vendorSelectId);
                         console.log('accNameSelect=' + accNameSelectId);
+                        console.log('productSelectId=' + productSelectId);
+                        console.log('quantity=' + quantity);
 
                         let eventDateS = new Date(startDate + 'T00:00:00');
                         let eventDateE = new Date(endDate + 'T00:00:00');
@@ -275,6 +277,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             alert('Please select Vendor.');
                         } else if(!accNameSelectId) {
                             alert('Please select Account.');
+                        } else if(!productSelectId) {
+                            alert('Please select Product.');
+                        } else if(!quantity) {
+                            alert('Please enter quantity of Product.');
                         } else {
 
                             eventDateS = new Date(eventDateS.getTime() - (offset*60*1000));
