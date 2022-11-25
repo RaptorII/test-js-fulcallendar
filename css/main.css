@@ -1641,6 +1641,7 @@ label[for=event__name] {
     width: 100%;
 }
 
+.event__product--item,
 .event__vendor--item,
 .event__accname--item {
     margin: 2px;
