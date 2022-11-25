@@ -318,6 +318,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 APIData: eventDataZoho
                             }).then( function(data) {
                                 console.log(data);
+                                console.log(data.data[0].details.id);
                             });
 
                         }
