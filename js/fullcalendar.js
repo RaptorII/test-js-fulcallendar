@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             let eventDataZoho = {
                                 "Start_Date": eventDateS,
                                 "End_Date": eventDateE,
-                                "Vendor": [vendorSelectId],
+                                "Vendor": vendorSelectId,
                                 "Subject": eventName,
                                 "Account_Name": accNameSelectId,
                                 "Product_Details": [productDetail],
