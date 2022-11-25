@@ -289,14 +289,14 @@ document.addEventListener('DOMContentLoaded', function () {
                             eventDateS = eventDateS.toISOString().split('T')[0];
                             eventDateE = eventDateE.toISOString().split('T')[0];
 
-                            calendar.addEvent({
-                                id: vendorSelectId,
-                                title: eventName,
-                                start: eventDateS,
-                                end: eventDateE,
-                                editable: true,
-                                description: eventName,
-                            });
+                            // calendar.addEvent({
+                            //     id: vendorSelectId,
+                            //     title: eventName,
+                            //     start: eventDateS,
+                            //     end: eventDateE,
+                            //     editable: true,
+                            //     description: eventName,
+                            // });
 
                             let productDetail = {
                                 "product": {
