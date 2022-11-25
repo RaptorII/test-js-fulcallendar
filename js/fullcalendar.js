@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let vendorSelectId;
     let accNameSelectId;
     let productSelectId;
+    let productSelectName;
 
     const offset = (new Date()).getTimezoneOffset();
 
@@ -244,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     for (let i = 0; i < selectProductItems.length; i++) {
                         selectProductItems[i].addEventListener('click', function () {
                             // console.log('selectVendorItems[i]' + this.getAttribute('data-id'));
-                            let epSearch1 = document.getElementById('event__product--search');
+                            let epSearch1 = productSelectName = document.getElementById('event__product--search');
                             epSearch1.value = this.getAttribute('data-name');
                             productSelectId = this.getAttribute('data-id');
                         });
@@ -300,6 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             let productDetail = {
                                 "quantity": quantity,
                                 "id": productSelectId,
+                                "Product": productSelectName,
                             }
 
                             let eventDataZoho = {
