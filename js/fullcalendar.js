@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 "product": {
                                     "id": productSelectId,
                                 },
-                                "quantity": quantity,
+                                "quantity": parseInt(quantity, 10),
                             }
 
                             let eventDataZoho = {
