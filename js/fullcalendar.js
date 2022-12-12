@@ -469,6 +469,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 })
                                 .then(function(dataZC){
 
+                                    console.log("i" + i);
                                     console.log("dataZC?.data[0]" + dataZC);
 
                                     if(dataZC) {
