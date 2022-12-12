@@ -465,7 +465,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 Query: "(id:equals:" + 3546009000053598120 + ")"
                             })
                             .then( function(dataZC){
-                                console.log('dataZC 3546009000053598120 = ' + 3546009000053598120 ));
+                                console.log('dataZC 3546009000053598120 = ' + 3546009000053598120 );
                             });
 
 
