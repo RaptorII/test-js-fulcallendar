@@ -458,9 +458,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         dataZ = dataZ.data;
                         if (dataZ.length) {
+
+                            ZOHO.CRM.API.searchRecord({
+                                Entity: "Sales_Orders",
+                                Type: "criteria",
+                                Query: "(id:equals:" + 3546009000053598120 + ")"
+                            })
+                            .then( function(dataZC){
+                                console.log('dataZC 3546009000053598120 = ' + 3546009000053598120 ));
+                            });
+
+
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
-                            for (let j = 0; j < dataZ.length; j++) {
+                            /*for (let j = 0; j < dataZ.length; j++) {
 
                                 // console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
 
@@ -469,7 +480,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     Type: "criteria",
                                     Query: "(id:equals:" + dataZ[j].Jobsheet.id + ")"
                                 })
-                                .then( async function(dataZC){
+                                .then( function(dataZC){
 
                                     // console.log("i" + i);
                                     console.log("dataZC?.data["+ j +"]" + JSON.stringify(dataZC?.data[j]));
@@ -494,7 +505,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     }
 
                                 });
-                            }
+                            }*/
                         }
                     });
                 return this.getAttribute('data-id');
