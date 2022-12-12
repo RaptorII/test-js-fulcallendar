@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 .then( function(dataZC){
 
                                     // console.log("i" + i);
-                                    console.log("dataZC?.data["+ j +"]" + JSON.stringify(dataZC?.data[j]));
+                                    // console.log("dataZC?.data["+ j +"]" + JSON.stringify(dataZC?.data[j]));
 
                                     if(dataZC) {
                                         dataZC = dataZC?.data[0];
