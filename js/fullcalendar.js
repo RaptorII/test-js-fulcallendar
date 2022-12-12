@@ -468,6 +468,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                     Query: "(id:equals:" + dataZ[i].Jobsheet.id + ")"
                                 })
                                 .then(function(dataZC){
+
+                                    console.log("dataZC?.data[0]" + dataZC);
+
                                     if(dataZC) {
                                         dataZC = dataZC?.data[0];
 
