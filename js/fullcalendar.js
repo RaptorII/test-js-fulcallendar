@@ -454,20 +454,22 @@ document.addEventListener('DOMContentLoaded', function () {
                         Type: "criteria",
                         Query: qveryStr
                     })
-                    .then(function(dataZ){
+                    .then( async function(dataZ){
 
                         dataZ = dataZ.data;
                         if (dataZ.length) {
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
                             for (let j = 0; j < dataZ.length; j++) {
+
                                 console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
-                                ZOHO.CRM.API.searchRecord({
+
+                                await ZOHO.CRM.API.searchRecord({
                                     Entity: "Sales_Orders",
                                     Type: "criteria",
                                     Query: "(id:equals:" + dataZ[j].Jobsheet.id + ")"
                                 })
-                                .then(function(dataZC){
+                                .then( async function(dataZC){
 
                                     // console.log("i" + i);
                                     console.log("dataZC?.data["+ j +"]" + JSON.stringify(dataZC?.data[j]));
