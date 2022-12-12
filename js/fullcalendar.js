@@ -460,22 +460,22 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (dataZ.length) {
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
-                            for (let i = 0; i < dataZ.length; i++) {
-                                console.log('dataZ[' + i + ']= ' + dataZ[i].Jobsheet.id);
+                            for (let j = 0; j < dataZ.length; j++) {
+                                console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
                                 ZOHO.CRM.API.searchRecord({
                                     Entity: "Sales_Orders",
                                     Type: "criteria",
-                                    Query: "(id:equals:" + dataZ[i].Jobsheet.id + ")"
+                                    Query: "(id:equals:" + dataZ[j].Jobsheet.id + ")"
                                 })
                                 .then(function(dataZC){
 
                                     // console.log("i" + i);
-                                    console.log("dataZC?.data["+ i +"]" + JSON.stringify(dataZC?.data[i]));
+                                    console.log("dataZC?.data["+ j +"]" + JSON.stringify(dataZC?.data[j]));
 
                                     if(dataZC) {
                                         dataZC = dataZC?.data[0];
 
-                                        console.log('i= ' + i);
+                                        console.log('j= ' + j);
                                         // console.log('dataZC= ' + JSON.stringify(dataZC) );
                                         console.log('dataZC_S= ' + dataZC?.Start_Date);
                                         console.log('dataZC_E= ' + dataZC?.End_Date);
