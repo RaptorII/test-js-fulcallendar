@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         Type: "criteria",
                         Query: qveryStr
                     })
-                    .then( async function(dataZ){
+                    .then( function(dataZ){
 
                         dataZ = dataZ.data;
                         if (dataZ.length) {
@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                                 // console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
 
-                                await ZOHO.CRM.API.searchRecord({
+                                ZOHO.CRM.API.searchRecord({
                                     Entity: "Sales_Orders",
                                     Type: "criteria",
                                     Query: "(id:equals:" + dataZ[j].Jobsheet.id + ")"
