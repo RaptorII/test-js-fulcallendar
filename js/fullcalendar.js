@@ -459,10 +459,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         dataZ = dataZ.data;
                         if (dataZ.length) {
 
+                            let qwr1 = "select id from Sales_Orders where id = '3546009000053598120' limit 2";
+
                             ZOHO.CRM.API.searchRecord({
                                 Entity: "Sales_Orders",
                                 Type: "criteria",
-                                Query: "( (id:equals: 3546009000053598120 ) )"
+                                Query: qwr1
                                 // Query: "( (id:equals: 3546009000053598120 ) and ($converted:equals: true) )"
                             })
                             .then( function(dataZC){
