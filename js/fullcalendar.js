@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             // let qwr1 = "select id from Sales_Orders where id = '3546009000053598120' limit 2";
 
-                            ZOHO.CRM.API.searchRecord({
+                            /*ZOHO.CRM.API.searchRecord({
                                 Entity: "Sales_Orders",
                                 Type: "criteria",
                                 Query: "( converted = 'true' )"
@@ -469,8 +469,22 @@ document.addEventListener('DOMContentLoaded', function () {
                             })
                             .then( function(dataZC){
                                 console.log('dataZC criteria = ' + JSON.stringify(dataZC) );
-                            });
+                            });*/
 
+                            let requestToZ ={
+                                url : "https://crm.zoho.com/crm/private/xml/Users/getUsers",
+                                params:{
+                                    scope:"crmapi",
+                                    type:"AllUsers"
+                                },
+                                // headers:{
+                                //     Authorization:"******************************",
+                                // }
+                            }
+                            ZOHO.CRM.HTTP.get(requestToZ)
+                                .then(function(data){
+                                    console.log(data)
+                                })
 
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
