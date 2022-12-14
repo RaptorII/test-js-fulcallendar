@@ -462,7 +462,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             ZOHO.CRM.API.searchRecord({
                                 Entity: "Sales_Orders",
                                 Type: "criteria",
-                                Query: "( (id:equals: 3546009000053598120 ) && (converted='true') )"
+                                Query: "( (id:equals: 3546009000053598120 ) and (converted = true) )"
                             })
                             .then( function(dataZC){
                                 console.log('dataZC criteria = ' + JSON.stringify(dataZC) );
