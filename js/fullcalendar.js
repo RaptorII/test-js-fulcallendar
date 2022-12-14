@@ -477,9 +477,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                     scope:"crmapi",
                                     type:"AllUsers"
                                 },
-                                // headers:{
-                                //     Authorization:"******************************",
-                                // }
+                                headers:{
+                                    Authorization:"1000.RRJIK0TR0S54K3H4OYF5K3FHFNOWAY",
+                                }
                             }
                             ZOHO.CRM.HTTP.get(requestToZ)
                                 .then(function(data){
