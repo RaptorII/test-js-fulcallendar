@@ -481,8 +481,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                         option.className = "jobsleest__item";
                                         // option.value = vendor_list[i].id; // set the value property
                                         option.setAttribute("data-id", dataZC.id);
-                                        option.setAttribute("data-name", dataZC.title);
-                                        option.appendChild(document.createTextNode(dataZC.title)); // set the textContent in a safe way.
+                                        option.setAttribute("data-name", dataZC?.Subject);
+                                        option.appendChild(document.createTextNode(dataZC?.Subject)); // set the textContent in a safe way.
                                         jobsDf.appendChild(option); // append the option to the document fragment
 
                                         console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
