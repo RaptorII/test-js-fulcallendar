@@ -501,15 +501,13 @@ document.addEventListener('DOMContentLoaded', function () {
                             }
                             jobsElm.appendChild(jobsDf);
 
-                            console.log('dataZC?.Subject = ' + jobsheet_list[j].Subject);
-                            console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
-                            console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
+                            // console.log('dataZC?.Subject = ' + jobsheet_list[j].Subject);
+                            // console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
+                            // console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
+                            // console.log('jobsElm2 = ' + JSON.stringify(jobsElm));
 
-                            console.log('jobsElm2 = ' + JSON.stringify(jobsElm));
+                            jobsheet_list = null;
                         }
-
-
-
 
                     });
                 return this.getAttribute('data-id');
