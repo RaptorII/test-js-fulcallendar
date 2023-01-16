@@ -441,12 +441,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
+                            // list of vendors
+                            let jobsElm = document.getElementById('jobsheet_option');
+                            let jobsDf = document.createDocumentFragment();
+
                             for (let j = 0; j < dataZ.length; j++) {
-
-                                // list of vendors
-                                let jobsElm = document.getElementById('jobsheet_option');
-                                let jobsDf = document.createDocumentFragment();
-
                                 // console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
 
                                 ZOHO.CRM.API.searchRecord({
@@ -459,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     // console.log("i" + i);
                                     // console.log("dataZC?.data["+ j +"]" + JSON.stringify(dataZC?.data[j]));
 
-                                    if(dataZC) {
+                                    if(dataZC.data[0]) {
                                         dataZC = dataZC?.data[0];
 
                                         // console.log('j= ' + j);
@@ -490,9 +489,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                     }
 
                                 });
-
-                                jobsElm.appendChild(jobsDf);
                             }
+                            jobsElm.appendChild(jobsDf);
                         }
                     });
                 return this.getAttribute('data-id');
