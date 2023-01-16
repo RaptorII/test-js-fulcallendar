@@ -443,11 +443,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
-                            // list of jobsheet
-                            let jobsElm = document.getElementById('jobsheet_option');
-                            let jobsDf = document.createDocumentFragment();
-
-
                             for (let j = 0; j < dataZ.length; j++) {
                                 // console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
 
@@ -489,23 +484,33 @@ document.addEventListener('DOMContentLoaded', function () {
                                 });
                                 // console.log('jobsheet_list = ' + jobsheet_list);
 
-                                // code jobsleest
-                                let optionjs = document.createElement('div'); // create the option element
-                                optionjs.className = "jobsleest__item";
+                            }
+
+                            // list of jobsheet
+                            let jobsElm = document.getElementById('jobsheet_option');
+                            let jobsDf = document.createDocumentFragment();
+
+                            for (let i = 0, l = jobsheet_list.length; i < l; i++) {
+                                let option = document.createElement('div'); // create the option element
+                                option.className = "jobsheet__item";
                                 // option.value = vendor_list[i].id; // set the value property
-                                optionjs.setAttribute("data-id", jobsheet_list[j].id);
-                                optionjs.setAttribute("data-name", jobsheet_list[j].Subject);
-                                optionjs.appendChild(document.createTextNode(jobsheet_list[j].Subject)); // set the textContent in a safe way.
-                                jobsDf.appendChild(optionjs); // append the option to the document fragment
-
-                                console.log('dataZC?.Subject = ' + jobsheet_list[j].Subject);
-                                console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
-                                console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
-
+                                option.setAttribute("data-id", jobsheet_list[i].id);
+                                option.setAttribute("data-name", jobsheet_list[i].title);
+                                option.appendChild(document.createTextNode(jobsheet_list[i].title)); // set the textContent in a safe way.
+                                jobsDf.appendChild(option); // append the option to the document fragment
                             }
                             jobsElm.appendChild(jobsDf);
+
+                            console.log('dataZC?.Subject = ' + jobsheet_list[j].Subject);
+                            console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
+                            console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
+
                             console.log('jobsElm2 = ' + JSON.stringify(jobsElm));
                         }
+
+
+
+
                     });
                 return this.getAttribute('data-id');
             });
