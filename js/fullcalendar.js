@@ -487,8 +487,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                     }
 
                                 });
-
-                                // code jobsleest
+console.log('jobsheet_list = ' + jobsheet_list);
+/*                                // code jobsleest
                                 let optionjs = document.createElement('div'); // create the option element
                                 optionjs.className = "jobsleest__item";
                                 // option.value = vendor_list[i].id; // set the value property
@@ -499,7 +499,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                                 console.log('dataZC?.Subject = ' + jobsheet_list[j].Subject);
                                 console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
-                                console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
+                                console.log('jobsDf1 = ' + JSON.stringify(jobsDf));*/
 
                             }
                             jobsElm.appendChild(jobsDf);
