@@ -485,13 +485,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                         option.appendChild(document.createTextNode(dataZC.title)); // set the textContent in a safe way.
                                         jobsDf.appendChild(option); // append the option to the document fragment
 
-
+                                        console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
                                     }
 
                                 });
                             }
                             jobsElm.appendChild(jobsDf);
-                            console.log('jobsElm = ' + JSON.stringify(jobsElm));
+                            console.log('jobsElm2 = ' + JSON.stringify(jobsElm));
                         }
                     });
                 return this.getAttribute('data-id');
