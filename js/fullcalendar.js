@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
-            right: 'addEventButton'//'dayGridMonth,timeGridWeek,timeGridDay'
+            // right: 'addEventButton'//'dayGridMonth,timeGridWeek,timeGridDay'
         },
         events: [
 /*
@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.log(data)
                 });
         },
+        /*
         customButtons: {
             addEventButton: {
                 text: 'add event...',
@@ -220,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
 
-                    /**/
+                    //
                     let selectVendorItems = document.getElementsByClassName('event__vendor--item');
                     for (let i = 0; i < selectVendorItems.length; i++) {
                         selectVendorItems[i].addEventListener('click', function () {
@@ -250,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             productSelectId = this.getAttribute('data-id');
                         });
                     }
-                    /**/
+                    //
 
                     let okBtn = document.getElementById('add-event__btn');
                     okBtn.onclick = function() {
@@ -337,16 +338,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
+        */
     });
     calendar.render();
 
     // close event popap;
-    let closeEventWrapper = document.getElementsByClassName('close');
+/*    let closeEventWrapper = document.getElementsByClassName('close');
     closeEventWrapper[0].onclick = function() {
         addEventWrapper.classList.remove('block-show');
         addEventWrapper.classList.add('block-none');
         bodyId.style.overflow = "auto";
-    }
+    }*/
 
     let main_vendor_list = [];
     let main_account_list = [];
@@ -502,6 +504,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                             editable: true,
                                             description: dataZC?.Subject,
                                         });
+
+                                        // code jobsleest
                                     }
 
                                 });
