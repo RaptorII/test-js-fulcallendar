@@ -332,8 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let main_account_list = [];
     let main_product_list = [];
 
-    let jobsElm = [];
-    let jobsDf =[];
+    let jobsheet_list = [];
 
     ZOHO.embeddedApp.on("PageLoad", async function(data){
         // console.log('data= '+ JSON.stringify(data));
@@ -445,8 +444,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
                             // list of jobsheet
-                            jobsElm = document.getElementById('jobsheet_option');
-                            jobsDf = document.createDocumentFragment();
+                            let jobsElm = document.getElementById('jobsheet_option');
+                            let jobsDf = document.createDocumentFragment();
+
 
                             for (let j = 0; j < dataZ.length; j++) {
                                 // console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
@@ -479,21 +479,28 @@ document.addEventListener('DOMContentLoaded', function () {
                                             description: dataZC?.Subject,
                                         });
 
-                                        // code jobsleest
-                                        let optionjs = document.createElement('div'); // create the option element
-                                        optionjs.className = "jobsleest__item";
-                                        // option.value = vendor_list[i].id; // set the value property
-                                        optionjs.setAttribute("data-id", dataZC.id);
-                                        optionjs.setAttribute("data-name", dataZC?.Subject);
-                                        optionjs.appendChild(document.createTextNode(dataZC?.Subject)); // set the textContent in a safe way.
-                                        jobsDf.appendChild(optionjs); // append the option to the document fragment
+                                        let vendor_object = {};
+                                        vendor_object.id = dataZC.id;
+                                        vendor_object.title = dataZC?.Subject;
+                                        jobsheet_list.push(vendor_object);
 
-                                        console.log('dataZC?.Subject = ' + dataZC?.Subject);
-                                        console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
-                                        console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
                                     }
 
                                 });
+
+                                // code jobsleest
+                                let optionjs = document.createElement('div'); // create the option element
+                                optionjs.className = "jobsleest__item";
+                                // option.value = vendor_list[i].id; // set the value property
+                                optionjs.setAttribute("data-id", jobsheet_list[j].id);
+                                optionjs.setAttribute("data-name", jobsheet_list[j].Subject);
+                                optionjs.appendChild(document.createTextNode(jobsheet_list[j].Subject)); // set the textContent in a safe way.
+                                jobsDf.appendChild(optionjs); // append the option to the document fragment
+
+                                console.log('dataZC?.Subject = ' + jobsheet_list[j].Subject);
+                                console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
+                                console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
+
                             }
                             jobsElm.appendChild(jobsDf);
                             console.log('jobsElm2 = ' + JSON.stringify(jobsElm));
