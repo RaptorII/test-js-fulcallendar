@@ -43,28 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // right: 'addEventButton'//'dayGridMonth,timeGridWeek,timeGridDay'
         },
         events: [
-/*
-            {
-               title: 'Long Event',
-               start: '2022-08-07',
-               end: '2022-08-10'
-            },
-            {
-               groupId: '999',
-               title: 'Repeating Event',
-               start: '2022-08-09T16:00:00'
-            },
-            {
-               groupId: '999',
-               title: 'Repeating Event',
-               start: '2022-08-16T16:00:00'
-            },
-            {
-               title: 'Conference',
-               start: '2022-08-11',
-               end: '2022-08-13'
-            }
- */
         ],
         eventDrop: function ( eventData ) {/* event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view */
             console.clear();
@@ -461,19 +439,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         dataZ = dataZ.data;
                         if (dataZ.length) {
 
-                            /*ZOHO.CRM.API.searchRecord({
-                                Entity: "Sales_Orders",
-                                Type: "criteria",
-                                Query: "( $converted:equals: true )"
-                                // Query: "( (id:equals: 3546009000053598120 ) and ($converted:equals: true) )"
-                            })
-                            .then( function(dataZC){
-                                console.log('dataZC criteria = ' + JSON.stringify(dataZC) );
-                            });*/
-
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
                             for (let j = 0; j < dataZ.length; j++) {
+
+                                // list of vendors
+                                let jobsElm = document.getElementById('jobsheet_option');
+                                let jobsDf = document.createDocumentFragment();
 
                                 // console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
 
@@ -490,10 +462,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                     if(dataZC) {
                                         dataZC = dataZC?.data[0];
 
-                                        console.log('j= ' + j);
+                                        // console.log('j= ' + j);
                                         // console.log('dataZC= ' + JSON.stringify(dataZC) );
-                                        console.log('dataZC_S= ' + dataZC?.Start_Date);
-                                        console.log('dataZC_E= ' + dataZC?.End_Date);
+                                        // console.log('dataZC_S= ' + dataZC?.Start_Date);
+                                        // console.log('dataZC_E= ' + dataZC?.End_Date);
 
                                         calendar.addEvent({
                                             id: dataZC.id,
@@ -506,9 +478,20 @@ document.addEventListener('DOMContentLoaded', function () {
                                         });
 
                                         // code jobsleest
+                                        let option = document.createElement('div'); // create the option element
+                                        option.className = "jobsleest__item";
+                                        // option.value = vendor_list[i].id; // set the value property
+                                        option.setAttribute("data-id", dataZC.id);
+                                        option.setAttribute("data-name", dataZC.title);
+                                        option.appendChild(document.createTextNode(dataZC.title)); // set the textContent in a safe way.
+                                        jobsDf.appendChild(option); // append the option to the document fragment
+
+
                                     }
 
                                 });
+
+                                jobsElm.appendChild(df);
                             }
                         }
                     });
