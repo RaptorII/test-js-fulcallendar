@@ -491,7 +491,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                                 });
 
-                                jobsElm.appendChild(df);
+                                jobsElm.appendChild(jobsDf);
                             }
                         }
                     });
