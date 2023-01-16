@@ -506,10 +506,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             // console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
                             // console.log('jobsElm2 = ' + JSON.stringify(jobsElm));
 
-                            jobsheet_list = null;
                         }
 
                     });
+                jobsheet_list = null;
                 return this.getAttribute('data-id');
             });
         }
