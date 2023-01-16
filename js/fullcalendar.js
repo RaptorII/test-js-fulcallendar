@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         optionjs.setAttribute("data-id", dataZC.id);
                                         optionjs.setAttribute("data-name", dataZC?.Subject);
                                         optionjs.appendChild(document.createTextNode(dataZC?.Subject)); // set the textContent in a safe way.
-                                        optionjs.appendChild(optionjs); // append the option to the document fragment
+                                        jobsDf.appendChild(optionjs); // append the option to the document fragment
 
                                         console.log('dataZC?.Subject = ' + dataZC?.Subject);
                                         console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
