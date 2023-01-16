@@ -477,14 +477,15 @@ document.addEventListener('DOMContentLoaded', function () {
                                         });
 
                                         // code jobsleest
-                                        let option = document.createElement('div'); // create the option element
-                                        option.className = "jobsleest__item";
+                                        let optionjs = document.createElement('div'); // create the option element
+                                        optionjs.className = "jobsleest__item";
                                         // option.value = vendor_list[i].id; // set the value property
-                                        option.setAttribute("data-id", dataZC.id);
-                                        option.setAttribute("data-name", dataZC?.Subject);
-                                        option.appendChild(document.createTextNode(dataZC?.Subject)); // set the textContent in a safe way.
-                                        jobsDf.appendChild(option); // append the option to the document fragment
+                                        optionjs.setAttribute("data-id", dataZC.id);
+                                        optionjs.setAttribute("data-name", dataZC?.Subject);
+                                        optionjs.appendChild(document.createTextNode(dataZC?.Subject)); // set the textContent in a safe way.
+                                        optionjs.appendChild(optionjs); // append the option to the document fragment
 
+                                        console.log('dataZC?.Subject = ' + dataZC?.Subject);
                                         console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
                                         console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
                                     }
