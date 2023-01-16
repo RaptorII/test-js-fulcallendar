@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     // console.log("i" + i);
                                     // console.log("dataZC?.data["+ j +"]" + JSON.stringify(dataZC?.data[j]));
 
-                                    if(dataZC.data[0]) {
+                                    if(dataZC.length) {
                                         dataZC = dataZC?.data[0];
 
                                         // console.log('j= ' + j);
@@ -491,6 +491,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 });
                             }
                             jobsElm.appendChild(jobsDf);
+                            console.log('jobsElm = ' + jobsElm);
                         }
                     });
                 return this.getAttribute('data-id');
