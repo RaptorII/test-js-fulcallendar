@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     // console.log("i" + i);
                                     // console.log("dataZC?.data["+ j +"]" + JSON.stringify(dataZC?.data[j]));
 
-                                    if(dataZC.length) {
+                                    if(dataZC) {
                                         dataZC = dataZC?.data[0];
 
                                         // console.log('j= ' + j);
