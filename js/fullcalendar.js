@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
-                            // list of vendors
+                            // list of jobsheet
                             let jobsElm = document.getElementById('jobsheet_option');
                             let jobsDf = document.createDocumentFragment();
 
@@ -486,6 +486,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         jobsDf.appendChild(option); // append the option to the document fragment
 
                                         console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
+                                        console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
                                     }
 
                                 });
