@@ -500,7 +500,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 jobsDf.appendChild(option); // append the option to the document fragment
                             }
                             jobsElm.appendChild(jobsDf);
-
+                            jobsheet_list = null;
                             // console.log('dataZC?.Subject = ' + jobsheet_list[j].Subject);
                             // console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
                             // console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
@@ -509,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
 
                     });
-                jobsheet_list = null;
+
                 return this.getAttribute('data-id');
             });
         }
