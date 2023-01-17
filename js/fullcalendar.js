@@ -592,9 +592,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 editable: true,
             });
 
-        let curJSId = document.getElementsByClassName('jobsheet__item').getAttribute('data-id');
-        curJSId.setAttribute("data-start", mcPStart.value);
-        curJSId.setAttribute("data-end", mcPEnd.value);
+        let curJSId = document.getElementsByClassName('jobsheet__item');
+        if(curJSId.length){
+            for (let i = 0; i < curJSId.length; i++) {
+                if(curJSId[i].getAttribute('data-id') === mcPId){
+                    curJSId.setAttribute("data-start", mcPStart.value);
+                    curJSId.setAttribute("data-end", mcPEnd.value);
+                }
+            }
+        }
+
 
     }
 
