@@ -543,8 +543,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 let jobSheetStart = this.getAttribute('data-start');
                 let jobSheetEnd = this.getAttribute('data-end');
 
-                jseData.dataset.dataId = jobSheetId;
-                jseData.dataset.dataTitle = jobSheetTitle;
+                // jseData.dataset.id = jobSheetId;
+                // jseData.dataset.title = jobSheetTitle;
+                 jseData.setAttribute("id", jobSheetId);
+                 jseData.setAttribute("title", jobSheetTitle);
 
                 mcPStart.value = jobSheetStart;
                 mcPEnd.value = jobSheetEnd;
