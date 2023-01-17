@@ -332,6 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let main_account_list = [];
     let main_product_list = [];
 
+    let jobsheet_list = [];
 
     ZOHO.embeddedApp.on("PageLoad", async function(data){
         // console.log('data= '+ JSON.stringify(data));
@@ -413,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     ZOHO.embeddedApp.init();
 
-     async function getIDbyClickOnVendor() {
+    async function getIDbyClickOnVendor() {
         let selectpickerItems = document.getElementsByClassName('selectpicker__item');
 
         for (let i = 0; i < selectpickerItems.length; i++) {
@@ -426,8 +427,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (calendar) { // refresh all events
                     calendar.removeAllEvents();
                 }
-
-                let jobsheet_list = [];
 
                 let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
                 console.log(qveryStr);
@@ -460,11 +459,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                     if(!dataZC.status) {
                                         dataZC = dataZC?.data[0];
 
-                                        // console.log('j= ' + j);
-                                        // console.log('dataZC= ' + JSON.stringify(dataZC) );
-                                        // console.log('dataZC_S= ' + dataZC?.Start_Date);
-                                        // console.log('dataZC_E= ' + dataZC?.End_Date);
-
                                         calendar.addEvent({
                                             id: dataZC.id,
                                             title: dataZC?.Subject,
@@ -483,8 +477,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                     }
 
                                 });
-                                // console.log('jobsheet_list = ' + jobsheet_list);
-
                             }
 
                             // list of jobsheet
@@ -504,16 +496,28 @@ document.addEventListener('DOMContentLoaded', function () {
                             }
                             jobsElm.appendChild(jobsDf);
 
-                            // console.log('dataZC?.Subject = ' + jobsheet_list[j].Subject);
-                            // console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
-                            // console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
-                            // console.log('jobsElm2 = ' + JSON.stringify(jobsElm));
+                            await getIdByClickJobsheet();
 
                         }
 
                     });
 
                 return this.getAttribute('data-id');
+            });
+        }
+    }
+
+    async function getIdByClickJobsheet(){
+        let jobsheetItems = document.getElementsByClassName('jobsheet__item');
+
+        for (let i = 0; i < jobsheetItems.length; i++) {
+            jobsheetItems[i].addEventListener('click', function () {
+                for (let i = 0; i < jobsheetItems.length; i++) {
+                    jobsheetItems[i].classList.remove("selected__item");
+                } // clear
+                this.classList.add("selected__item"); // select item
+
+
             });
         }
     }

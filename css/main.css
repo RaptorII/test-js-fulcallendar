@@ -1513,6 +1513,7 @@ A VERTICAL event
     flex: 1 1 auto;
 }
 
+.jobsheet__item,
 .selectpicker__item {
     padding: 2px 10px;
     border: 1px solid darkgrey;
