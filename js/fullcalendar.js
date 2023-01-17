@@ -328,9 +328,9 @@ document.addEventListener('DOMContentLoaded', function () {
         bodyId.style.overflow = "auto";
     }*/
 
-    let main_vendor_list = [];
+/*    let main_vendor_list = [];
     let main_account_list = [];
-    let main_product_list = [];
+    let main_product_list = [];*/
 
     let jobsheet_list = [];
 
@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     vendor_list.push(vendor_object);
                 }
                 // console.log('vendor_list: ' +  JSON.stringify(vendor_list));
-                main_vendor_list = vendor_list;
+                // main_vendor_list = vendor_list;
 
                 // list of vendors
                 let elm = document.getElementById('employee_option');
@@ -369,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         await getIDbyClickOnVendor();//.then(r => 'notfound');
 
-        let account_list = [];
+        /*let account_list = [];
         for(let page = 0; page <= 4; page++) {
             await ZOHO.CRM.API.getAllRecords({Entity: "Accounts", sort_order: "asc", per_page: 200, page: page })
                 .then(async function (account_detail) {
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 })
         }
-        main_product_list = [...new Set(main_product_list)];
+        main_product_list = [...new Set(main_product_list)];*/
 
     })
     ZOHO.embeddedApp.init();
@@ -484,6 +484,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             let jobsDf = document.createDocumentFragment();
 
                             jobsElm.innerHTML = '';
+                            // jobsElm.replaceChildren();
 
                             for (let i = 0, l = jobsheet_list.length; i < l; i++) {
                                 let option = document.createElement('div'); // create the option element
