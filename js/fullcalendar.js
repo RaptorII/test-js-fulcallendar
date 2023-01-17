@@ -538,6 +538,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.classList.add("selected__item"); // select item
 
                 let jobSheetId = this.getAttribute('data-id');
+                let jobSheetTitle = this.getAttribute('data-name');
                 let jobSheetStart = this.getAttribute('data-start');
                 let jobSheetEnd = this.getAttribute('data-end');
 
@@ -551,6 +552,32 @@ document.addEventListener('DOMContentLoaded', function () {
                     let mcPEndV = mcPEnd.value;
 
                     //send to zoho;
+                    console.clear();
+                    console.log("edit jobsheet");
+
+                    let startDate = new Date(jobSheetStart.getTime() - (offset*60*1000));
+                    let endDate = new Date(jobSheetEnd.getTime() - (offset*60*1000));
+
+                    startDate = startDate.toISOString().split('T')[0];
+                    endDate = endDate.toISOString().split('T')[0];
+
+                    console.log(eventData.event.title + " start is now " + startDate);
+                    console.log(eventData.event.title + " end is now " + endDate);
+
+                    // to Zoho
+                    let eventUpdate = {
+                        Entity:"Sales_Orders",
+                        APIData:{
+                            "id" : jobSheetId,
+                            "Subject" : jobSheetTitle,
+                            "Start_Date": startDate,
+                            "End_Date"  : endDate,
+                        }
+                    }
+                    ZOHO.CRM.API.updateRecord(eventUpdate)
+                        .then(function(data){
+                            console.log(data)
+                        });
                 }
 
             });
