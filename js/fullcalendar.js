@@ -347,8 +347,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let main_account_list = [];
     let main_product_list = [];*/
 
-    let jobsheet_list = [];
-
     ZOHO.embeddedApp.on("PageLoad", async function(data){
         // console.log('data= '+ JSON.stringify(data));
 
@@ -458,6 +456,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
+                            let jobsheet_list = [];
                             for (let j = 0; j < dataZ.length; j++) {
                                 // console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
 
@@ -560,8 +559,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let okBtn = document.getElementById('jse__btn--ok');
     okBtn.onclick = function() {
-        // let mcPStartV = mcPStart.value;
-        // let mcPEndV = mcPEnd.value;
         let mcPId = jseData.dataset.id;
         let mcPTitle = jseData.dataset.title;
 
