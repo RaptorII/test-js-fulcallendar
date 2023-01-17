@@ -541,8 +541,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 let jobSheetStart = this.getAttribute('data-start');
                 let jobSheetEnd = this.getAttribute('data-end');
 
-                mcPStart.value(jobSheetStart);
-                mcPStart.value(jobSheetEnd);
+                mcPStart.value = jobSheetStart;
+                mcPStart.value = jobSheetEnd;
 
 
                 let okBtn = document.getElementById('jse__btn--ok');
