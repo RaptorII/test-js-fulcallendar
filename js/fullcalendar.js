@@ -596,8 +596,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if(curJSId.length){
             for (let i = 0; i < curJSId.length; i++) {
                 if(curJSId[i].getAttribute('data-id') === mcPId){
-                    curJSId.setAttribute("data-start", mcPStart.value);
-                    curJSId.setAttribute("data-end", mcPEnd.value);
+                    curJSId[i].setAttribute("data-start", mcPStart.value);
+                    curJSId[i].setAttribute("data-end", mcPEnd.value);
                 }
             }
         }
