@@ -527,6 +527,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    let jseData = document.getElementById('jse__data');
     async function getIdByClickJobsheet(){
         let jobsheetItems = document.getElementsByClassName('jobsheet__item');
 
@@ -542,45 +543,50 @@ document.addEventListener('DOMContentLoaded', function () {
                 let jobSheetStart = this.getAttribute('data-start');
                 let jobSheetEnd = this.getAttribute('data-end');
 
+                jseData.dataset.dataId = jobSheetId;
+                jseData.dataset.dataTitle = jobSheetTitle;
+
                 mcPStart.value = jobSheetStart;
                 mcPEnd.value = jobSheetEnd;
 
 
-                let okBtn = document.getElementById('jse__btn--ok');
-                okBtn.onclick = function() {
-                    let mcPStartV = mcPStart.value;
-                    let mcPEndV = mcPEnd.value;
 
-                    //send to zoho;
-                    console.clear();
-                    console.log("edit jobsheet");
-
-                    let startDate = new Date(jobSheetStart.getTime() - (offset*60*1000));
-                    let endDate = new Date(jobSheetEnd.getTime() - (offset*60*1000));
-
-                    startDate = startDate.toISOString().split('T')[0];
-                    endDate = endDate.toISOString().split('T')[0];
-
-                    console.log(eventData.event.title + " start is now " + startDate);
-                    console.log(eventData.event.title + " end is now " + endDate);
-
-                    // to Zoho
-                    let eventUpdate = {
-                        Entity:"Sales_Orders",
-                        APIData:{
-                            "id" : jobSheetId,
-                            "Subject" : jobSheetTitle,
-                            "Start_Date": startDate,
-                            "End_Date"  : endDate,
-                        }
-                    }
-                    ZOHO.CRM.API.updateRecord(eventUpdate)
-                        .then(function(data){
-                            console.log(data)
-                        });
-                }
 
             });
         }
     }
+
+    let okBtn = document.getElementById('jse__btn--ok');
+    okBtn.onclick = function() {
+        let mcPStartV = mcPStart.value;
+        let mcPEndV = mcPEnd.value;
+
+        console.clear();
+        console.log("edit jobsheet");
+
+        let startDate = new Date(mcPStartV.getTime() - (offset*60*1000));
+        let endDate = new Date(mcPEndV.getTime() - (offset*60*1000));
+
+        startDate = startDate.toISOString().split('T')[0];
+        endDate = endDate.toISOString().split('T')[0];
+
+        console.log(eventData.event.title + " start is now " + startDate);
+        console.log(eventData.event.title + " end is now " + endDate);
+
+        // to Zoho
+        let eventUpdate = {
+            Entity:"Sales_Orders",
+            APIData:{
+                "id" : jobSheetId,
+                "Subject" : jobSheetTitle,
+                "Start_Date": startDate,
+                "End_Date"  : endDate,
+            }
+        }
+        ZOHO.CRM.API.updateRecord(eventUpdate)
+            .then(function(data){
+                console.log(data)
+            });
+    }
+
 })
