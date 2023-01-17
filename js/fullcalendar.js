@@ -592,20 +592,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(data)
             });
 
-        let resbyid = calendar.getEventById( mcPId );
+        let currentEvent = calendar.getEventById( mcPId );
+        currentEvent.setDates( startDate, endDate);
+        // console.log("currentEvent= " + JSON.stringify(currentEvent) );
 
-        console.log("mcPId= " + JSON.stringify(resbyid) );
-
-        // calendar.remove( {id: mcPId});
-        // calendar.addEvent({
-        //     id: mcPId,
-        //     title: mcPTitle,
-        //     start: startDate,
-        //     end: endDate,
-        //     editable: true,
-        //     description: mcPTitle,
-        // });
-        // calendar.refetchEvents();
+        calendar.refetchEvents();
     }
 
 })
