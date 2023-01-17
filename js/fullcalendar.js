@@ -592,13 +592,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(data)
             });
 
-        calendar.addEvent({
+        calendar.refetchEvents({
             id: mcPId,
             start: startDate,
             end: endDate,
             editable: true,
         });
-        calendar.refetchEvents();
     }
 
 })
