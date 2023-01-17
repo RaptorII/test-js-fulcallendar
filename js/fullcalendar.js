@@ -332,7 +332,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let main_account_list = [];
     let main_product_list = [];
 
-    let jobsheet_list = [];
 
     ZOHO.embeddedApp.on("PageLoad", async function(data){
         // console.log('data= '+ JSON.stringify(data));
@@ -443,6 +442,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
+                            let jobsheet_list = [];
                             for (let j = 0; j < dataZ.length; j++) {
                                 // console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
 
@@ -500,7 +500,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 jobsDf.appendChild(option); // append the option to the document fragment
                             }
                             jobsElm.appendChild(jobsDf);
-                            jobsheet_list = {};
+
                             // console.log('dataZC?.Subject = ' + jobsheet_list[j].Subject);
                             // console.log('jobsElm1 = ' + JSON.stringify(jobsElm));
                             // console.log('jobsDf1 = ' + JSON.stringify(jobsDf));
