@@ -594,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let resbyid = calendar.getEventById( mcPId );
 
-        console.log("mcPId= " + resbyid);
+        console.log("mcPId= " + JSON.stringify(resbyid) );
 
         // calendar.remove( {id: mcPId});
         // calendar.addEvent({
