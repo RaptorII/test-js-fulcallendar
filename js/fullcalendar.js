@@ -592,16 +592,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(data)
             });
 
-        calendar.remove( {id: mcPId});
-        calendar.addEvent({
-            id: mcPId,
-            title: mcPTitle,
-            start: startDate,
-            end: endDate,
-            editable: true,
-            description: mcPTitle,
-        });
-        calendar.refetchEvents();
+        let resbyid = calendar.getEventById( mcPId );
+
+        console.log("mcPId= " + resbyid);
+
+        // calendar.remove( {id: mcPId});
+        // calendar.addEvent({
+        //     id: mcPId,
+        //     title: mcPTitle,
+        //     start: startDate,
+        //     end: endDate,
+        //     editable: true,
+        //     description: mcPTitle,
+        // });
+        // calendar.refetchEvents();
     }
 
 })
