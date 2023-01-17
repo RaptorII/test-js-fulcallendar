@@ -568,8 +568,8 @@ document.addEventListener('DOMContentLoaded', function () {
         console.clear();
         console.log("edit jobsheet");
 
-        let startDate = new Date(mcPStart.getTime() - (offset*60*1000));
-        let endDate = new Date(mcPEnd.getTime() - (offset*60*1000));
+        let startDate = new Date((new Date(mcPStart.value)).getTime() - (offset*60*1000));
+        let endDate = new Date((new Date(mcPEnd.value)).getTime() - (offset*60*1000));
 
         startDate = startDate.toISOString().split('T')[0];
         endDate = endDate.toISOString().split('T')[0];
