@@ -593,10 +593,13 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
         let currentEvent = calendar.getEventById( mcPId );
-        currentEvent.setDates( startDate, endDate);
+        currentEvent.setDates( startDate, endDate,
+            {
+                editable: true,
+            });
         // console.log("currentEvent= " + JSON.stringify(currentEvent) );
 
-        calendar.refetchEvents();
+        // calendar.refetchEvents();
     }
 
 })
