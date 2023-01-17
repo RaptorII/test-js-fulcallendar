@@ -491,6 +491,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             let jobsElm = document.getElementById('jobsheet_option');
                             let jobsDf = document.createDocumentFragment();
 
+                            jobsElm.remove();
+
                             for (let i = 0, l = jobsheet_list.length; i < l; i++) {
                                 let option = document.createElement('div'); // create the option element
                                 option.className = "jobsheet__item";
