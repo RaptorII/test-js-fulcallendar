@@ -601,6 +601,7 @@ document.addEventListener('DOMContentLoaded', function () {
             editable: true,
             description: mcPTitle,
         });
+        calendar.refetchEvents();
     }
 
 })
