@@ -545,8 +545,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // jseData.dataset.id = jobSheetId;
                 // jseData.dataset.title = jobSheetTitle;
-                 jseData.setAttribute("id", jobSheetId);
-                 jseData.setAttribute("title", jobSheetTitle);
+                jseData.setAttribute("data-id", jobSheetId);
+                jseData.setAttribute("data-title", jobSheetTitle);
 
                 mcPStart.value = jobSheetStart;
                 mcPEnd.value = jobSheetEnd;
@@ -562,6 +562,8 @@ document.addEventListener('DOMContentLoaded', function () {
     okBtn.onclick = function() {
         let mcPStartV = mcPStart.value;
         let mcPEndV = mcPEnd.value;
+        let mcPId = jseData.dataset.id;
+        let mcPTitle = jseData.dataset.title;
 
         console.clear();
         console.log("edit jobsheet");
@@ -579,8 +581,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let eventUpdate = {
             Entity:"Sales_Orders",
             APIData:{
-                "id" : jobSheetId,
-                "Subject" : jobSheetTitle,
+                "id" : mcPId,
+                "Subject" : mcPTitle,
                 "Start_Date": startDate,
                 "End_Date"  : endDate,
             }
