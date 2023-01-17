@@ -560,22 +560,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let okBtn = document.getElementById('jse__btn--ok');
     okBtn.onclick = function() {
-        let mcPStartV = mcPStart.value;
-        let mcPEndV = mcPEnd.value;
+        // let mcPStartV = mcPStart.value;
+        // let mcPEndV = mcPEnd.value;
         let mcPId = jseData.dataset.id;
         let mcPTitle = jseData.dataset.title;
 
         console.clear();
         console.log("edit jobsheet");
 
-        let startDate = new Date(mcPStartV.getTime() - (offset*60*1000));
-        let endDate = new Date(mcPEndV.getTime() - (offset*60*1000));
+        let startDate = new Date(mcPStart.getTime() - (offset*60*1000));
+        let endDate = new Date(mcPEnd.getTime() - (offset*60*1000));
 
         startDate = startDate.toISOString().split('T')[0];
         endDate = endDate.toISOString().split('T')[0];
 
-        console.log(eventData.event.title + " start is now " + startDate);
-        console.log(eventData.event.title + " end is now " + endDate);
+        // console.log(eventData.event.title + " start is now " + startDate);
+        // console.log(eventData.event.title + " end is now " + endDate);
 
         // to Zoho
         let eventUpdate = {
