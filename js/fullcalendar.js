@@ -550,9 +550,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 mcPStart.value = jobSheetStart;
                 mcPEnd.value = jobSheetEnd;
 
-
-
-
             });
         }
     }
@@ -594,9 +591,11 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 editable: true,
             });
-        // console.log("currentEvent= " + JSON.stringify(currentEvent) );
 
-        // calendar.refetchEvents();
+        let curJSId = document.getElementsByClassName('jobsheet__item').getAttribute('data-id');
+        curJSId.setAttribute("data-start", mcPStart.value);
+        curJSId.setAttribute("data-end", mcPEnd.value);
+
     }
 
 })
