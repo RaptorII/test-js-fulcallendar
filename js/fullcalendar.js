@@ -592,12 +592,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(data)
             });
 
-        calendar.eventChange({
-            id: mcPId,
-            start: startDate,
-            end: endDate,
-            editable: true,
-        });
+        // calendar.eventChange({
+        //     id: mcPId,
+        //     start: startDate,
+        //     end: endDate,
+        //     editable: true,
+        // });
+        calendar.refetchEvents();
     }
 
 })
