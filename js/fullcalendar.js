@@ -427,6 +427,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     calendar.removeAllEvents();
                 }
 
+                let jobsheet_list = [];
+
                 let qveryStr = "(Vendor.id:equals:" + this.getAttribute('data-id') + ")";
                 console.log(qveryStr);
 
@@ -442,7 +444,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             // console.log('dataZ length= ' + JSON.stringify(dataZ.length));
 
-                            let jobsheet_list = [];
                             for (let j = 0; j < dataZ.length; j++) {
                                 // console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
 
