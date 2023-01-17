@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             closeOnBlur: true,
             dateFormat: 'YYYY-MM-DD'
         }); */
+
     let mcPStart = document.getElementById('jse__datestart');
     MCDatepicker.create({
         el: '#jse__datestart',
@@ -486,6 +487,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                         let vendor_object = {};
                                         vendor_object.id = dataZC.id;
                                         vendor_object.title = dataZC?.Subject;
+                                        vendor_object.start = dataZC?.Start_Date;
+                                        vendor_object.end = dataZC?.End_Date;
                                         jobsheet_list.push(vendor_object);
 
                                     }
@@ -506,6 +509,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 // option.value = vendor_list[i].id; // set the value property
                                 option.setAttribute("data-id", jobsheet_list[i].id);
                                 option.setAttribute("data-name", jobsheet_list[i].title);
+                                option.setAttribute("data-start", jobsheet_list[i].start);
+                                option.setAttribute("data-end", jobsheet_list[i].end);
                                 option.appendChild(document.createTextNode(jobsheet_list[i].title)); // set the textContent in a safe way.
                                 jobsDf.appendChild(option); // append the option to the document fragment
                             }
@@ -532,6 +537,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 } // clear
                 this.classList.add("selected__item"); // select item
 
+                let jobSheetId = this.getAttribute('data-id');
+                let jobSheetStart = this.getAttribute('data-start');
+                let jobSheetEnd = this.getAttribute('data-end');
+
+                mcPStart.value(jobSheetStart);
+                mcPStart.value(jobSheetEnd);
+
+
+                let okBtn = document.getElementById('jse__btn--ok');
+                okBtn.onclick = function() {
+                    let mcPStartV = mcPStart.value;
+                    let mcPEndV = mcPEnd.value;
+
+                    //send to zoho;
+                }
 
             });
         }
