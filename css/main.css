@@ -1519,6 +1519,7 @@ A VERTICAL event
     border: 1px solid darkgrey;
     margin: 1px 20px 1px;
 }
+.jobsheet__item:hover,
 .selectpicker__item:hover {
     cursor: pointer;
     background: #cccccc;
