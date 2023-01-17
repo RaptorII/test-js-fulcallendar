@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const offset = (new Date()).getTimezoneOffset();
 
-    let datePickerS = document.getElementById('datepicker-start');
+    /*let datePickerS = document.getElementById('datepicker-start');
     MCDatepicker.create(
         {
             el: '#datepicker-start',
@@ -26,7 +26,21 @@ document.addEventListener('DOMContentLoaded', function () {
             bodyType: 'inline',
             closeOnBlur: true,
             dateFormat: 'YYYY-MM-DD'
-        });
+        }); */
+    let mcPStart = document.getElementById('jse__datestart');
+    MCDatepicker.create({
+        el: '#jse__datestart',
+        bodyType: 'inline',
+        closeOnBlur: true,
+        dateFormat: 'YYYY-MM-DD'
+    });
+    let mcPEnd = document.getElementById('jse__dateend');
+    MCDatepicker.create({
+        el: '#jse__dateend',
+        bodyType: 'inline',
+        closeOnBlur: true,
+        dateFormat: 'YYYY-MM-DD'
+    });
 
     // calendar
     let calendarEl = document.getElementById('calendar');

@@ -1513,6 +1513,15 @@ A VERTICAL event
     flex: 1 1 auto;
 }
 
+.jobsheet__box {
+    display: flex;
+    justify-content: space-between;
+}
+.jobsheet__box input {
+    width: 150px;
+}
+
+.jobsheet__box,
 .jobsheet__item,
 .selectpicker__item {
     padding: 2px 10px;
@@ -1525,6 +1534,9 @@ A VERTICAL event
     background: #cccccc;
 }
 
+.jobsheet__head{
+    width: 250px;
+}
 .jobsheet__head,
 .selectpicker__head {
     padding: 7px 10px;
