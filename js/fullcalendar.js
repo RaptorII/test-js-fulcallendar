@@ -542,7 +542,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 let jobSheetEnd = this.getAttribute('data-end');
 
                 mcPStart.value = jobSheetStart;
-                mcPStart.value = jobSheetEnd;
+                mcPEnd.value = jobSheetEnd;
 
 
                 let okBtn = document.getElementById('jse__btn--ok');
