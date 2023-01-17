@@ -591,6 +591,13 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(function(data){
                 console.log(data)
             });
+
+        calendar.eventChange({
+            id: mcPId,
+            start: startDate,
+            end: endDate,
+            editable: true,
+        });
     }
 
 })
