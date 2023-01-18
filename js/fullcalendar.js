@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         closeOnBlur: true,
         dateFormat: 'YYYY-MM-DD',
     }).onOpen( function() {
-        mcPStartP.selectedDate = mcPStart.value ? new Date(mcPStart.value) : new Date();
+        mcPStart.value ? mcPStartP.setDate( new Date(mcPStart.value) ) : mcPStartP.setDate( new Date() );
     });
     let mcPEnd = document.getElementById('jse__dateend');
     let mcPEndP = MCDatepicker.create({
@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
         closeOnBlur: true,
         dateFormat: 'YYYY-MM-DD',
     }).onOpen( function() {
-        mcPEndP.options.selectedDate = mcPEnd.value ? new Date(mcPEnd.value) : new Date();
+        // mcPEndP.options.selectedDate = mcPEnd.value ? new Date(mcPEnd.value) : new Date();
+        mcPEnd.value ? mcPEndP.setDate( new Date(mcPEnd.value) ) : mcPEndP.setDate( new Date() );
     });
 
     // calendar
