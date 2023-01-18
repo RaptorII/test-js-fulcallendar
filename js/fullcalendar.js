@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         closeOnBlur: true,
         dateFormat: 'YYYY-MM-DD',
     }).onOpen( function() {
-        mcPEndP.selectedDate = mcPEnd.value ? new Date(mcPEnd.value) : new Date();
+        mcPEndP.options.selectedDate = mcPEnd.value ? new Date(mcPEnd.value) : new Date();
     });
 
     // calendar
