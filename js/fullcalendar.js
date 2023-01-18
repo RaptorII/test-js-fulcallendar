@@ -29,20 +29,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }); */
 
     let mcPStart = document.getElementById('jse__datestart');
-    MCDatepicker.create({
+    let mcPStartP =  MCDatepicker.create({
         el: '#jse__datestart',
         bodyType: 'inline',
         closeOnBlur: true,
         dateFormat: 'YYYY-MM-DD',
-        selectedDate: mcPStart.value ? new Date(mcPStart.value) : new Date()
+    }).onOpen( function() {
+        mcPStartP.selectedDate = mcPStart.value ? new Date(mcPStart.value) : new Date();
     });
     let mcPEnd = document.getElementById('jse__dateend');
-    MCDatepicker.create({
+    let mcPEndP = MCDatepicker.create({
         el: '#jse__dateend',
         bodyType: 'inline',
         closeOnBlur: true,
         dateFormat: 'YYYY-MM-DD',
-        selectedDate: mcPEnd.value ? new Date(mcPEnd.value) : new Date()
+    }).onOpen( function() {
+        mcPEndP.selectedDate = mcPEnd.value ? new Date(mcPEnd.value) : new Date();
     });
 
     // calendar
