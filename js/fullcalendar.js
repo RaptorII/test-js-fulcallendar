@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         bodyType: 'inline',
         closeOnBlur: true,
         dateFormat: 'YYYY-MM-DD',
-        selectedDate: mcPStart.value || ''
+        selectedDate: mcPStart.value ? mcPStart.value : ''
     });
     let mcPEnd = document.getElementById('jse__dateend');
     MCDatepicker.create({
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         bodyType: 'inline',
         closeOnBlur: true,
         dateFormat: 'YYYY-MM-DD',
-        selectedDate: mcPEnd.value || ''
+        selectedDate: mcPEnd.value ? mcPEnd.value : ''
     });
 
     // calendar
