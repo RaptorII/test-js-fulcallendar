@@ -33,14 +33,16 @@ document.addEventListener('DOMContentLoaded', function () {
         el: '#jse__datestart',
         bodyType: 'inline',
         closeOnBlur: true,
-        dateFormat: 'YYYY-MM-DD'
+        dateFormat: 'YYYY-MM-DD',
+        selectedDate: mcPStart.value || ''
     });
     let mcPEnd = document.getElementById('jse__dateend');
     MCDatepicker.create({
         el: '#jse__dateend',
         bodyType: 'inline',
         closeOnBlur: true,
-        dateFormat: 'YYYY-MM-DD'
+        dateFormat: 'YYYY-MM-DD',
+        selectedDate: mcPEnd.value || ''
     });
 
     // calendar
