@@ -540,12 +540,14 @@ document.addEventListener('DOMContentLoaded', function () {
                                             });
                                         }
 
-                                        let vendor_object = {};
-                                        vendor_object.id = dataZC.id;
-                                        vendor_object.title = dataZC?.Subject;
-                                        vendor_object.start = dataZC?.Start_Date;
-                                        vendor_object.end = dataZC?.End_Date;
-                                        jobsheet_list.push(vendor_object);
+                                        if(dataZC?.Start_Date !=='' || dataZC?.End_Date !== '') {
+                                            let vendor_object = {};
+                                            vendor_object.id = dataZC.id;
+                                            vendor_object.title = dataZC?.Subject;
+                                            vendor_object.start = dataZC?.Start_Date;
+                                            vendor_object.end = dataZC?.End_Date;
+                                            jobsheet_list.push(vendor_object);
+                                        }
 
                                     });
 
