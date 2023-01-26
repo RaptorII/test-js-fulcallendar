@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 });
                                 */
 
-                                const myUrl = "https://crmapp.freshpaintinc.com/get-invoiced";
+                                const myUrl = "https://crmapp.freshpaintinc.com/api/get-invoiced";
                                 const data2s = {
                                     id: dataZ[j].Jobsheet.id,
                                 };
