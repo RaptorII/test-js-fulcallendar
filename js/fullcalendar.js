@@ -511,7 +511,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     body: JSON.stringify(data2s),
                                     mode: 'no-cors',
                                     headers: {
-                                        Accept: "application/json",
+                                        // Accept: "application/json",
                                         "Content-Type": "application/json; charset=UTF-8",
                                         // Authorization: 'Bearer 2|2j2cjvH0tC48fjU4aMk4d7iFfBDeEzULjgyy0YNe'
                                     }
