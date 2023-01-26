@@ -509,7 +509,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                 fetch(myUrl, {
                                     method: 'POST',
                                     body: JSON.stringify(data2s),
-                                    mode: 'no-cors',
                                     headers: {
                                         // Accept: "application/json",
                                         "Content-Type": "application/json; charset=UTF-8"
