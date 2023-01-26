@@ -510,14 +510,38 @@ document.addEventListener('DOMContentLoaded', function () {
                                     method: 'POST',
                                     body: JSON.stringify(data2s),
                                     headers: {
-                                        // Accept: "application/json",
                                         "Content-Type": "application/json; charset=UTF-8"
-                                        // Authorization: 'Bearer 2|2j2cjvH0tC48fjU4aMk4d7iFfBDeEzULjgyy0YNe'
                                     }
                                 })
                                     .then(response => response.json())
                                     .then(dataZC => {
-                                        console.log(dataZC);
+                                        // console.log(dataZC);
+                                        dataZC = dataZC?.data[0];
+
+                                        if(dataZC.$converted===1) {
+                                            calendar.addEvent({
+                                                id: dataZC.id,
+                                                title: dataZC?.Subject,
+                                                start: dataZC?.Start_Date,
+                                                end: dataZC?.End_Date,
+                                                editable: true,
+                                                description: dataZC?.Subject,
+                                                color: 'red'
+                                            });
+                                        } else {
+                                            calendar.addEvent({
+                                                id: dataZC.id,
+                                                title: dataZC?.Subject,
+                                                start: dataZC?.Start_Date,
+                                                end: dataZC?.End_Date,
+                                                editable: true,
+                                                description: dataZC?.Subject,
+                                            });
+                                        }
+
+
+
+
                                     });
 
 
