@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // initialDate: '2022-08-07',
         selectable: true,
         editable: true,
-        eventColor: 'blue',
+        // eventColor: 'blue',
         nextDayThreshold: '00:00:00',
         headerToolbar: {
             left: 'prev,next today',
@@ -527,9 +527,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 end: dataZC?.End_Date,
                                                 editable: false,
                                                 description: dataZC?.Subject,
-                                                overlap: false,
-                                                rendering: 'background',
-                                                color: '#257e4a'
+                                                eventColor: 'purple'
                                             });
                                         } else {
                                             calendar.addEvent({
