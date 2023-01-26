@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             let jobsheet_list = [];
                             for (let j = 0; j < dataZ.length; j++) {
-                                // console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
+                                console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
 
                                 await ZOHO.CRM.API.searchRecord({
                                     Entity: "Sales_Orders",
@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 })
                                 .then( function(dataZC){
 
-                                    console.log("dataZC = " + JSON.stringify(dataZC));
+                                    // console.log("dataZC = " + JSON.stringify(dataZC));
                                     // console.log("dataZC?.data["+ j +"]" + JSON.stringify(dataZC?.data[j]));
 
                                     if(!dataZC.status) {
