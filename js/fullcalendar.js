@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             let jobsheet_list = [];
                             for (let j = 0; j < dataZ.length; j++) {
-                                console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
+                                // console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
 
                                 /*
                                 await ZOHO.CRM.API.searchRecord({
@@ -515,8 +515,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                 })
                                     .then(response => response.json())
                                     .then(dataZC => {
+
+                                        dataZC = dataZC[0];
                                         // console.log(dataZC);
-                                        // dataZC = dataZC?.data[0];
 
                                         if(dataZC.$converted===1) {
                                             calendar.addEvent({
