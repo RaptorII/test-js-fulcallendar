@@ -540,7 +540,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                             });
                                         }
 
-                                        if(dataZC?.Start_Date !=='' || dataZC?.End_Date !== '') {
+                                        if(dataZC?.Start_Date ==='' || dataZC?.End_Date === '') {
                                             let vendor_object = {};
                                             vendor_object.id = dataZC.id;
                                             vendor_object.title = dataZC?.Subject;
