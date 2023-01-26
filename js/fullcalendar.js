@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     .then(response => response.json())
                                     .then(dataZC => {
                                         // console.log(dataZC);
-                                        dataZC = dataZC?.data[0];
+                                        // dataZC = dataZC?.data[0];
 
                                         if(dataZC.$converted===1) {
                                             calendar.addEvent({
