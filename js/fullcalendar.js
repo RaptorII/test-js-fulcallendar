@@ -465,6 +465,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             for (let j = 0; j < dataZ.length; j++) {
                                 console.log('dataZ[' + j + ']= ' + dataZ[j].Jobsheet.id);
 
+                                /*
                                 await ZOHO.CRM.API.searchRecord({
                                     Entity: "Sales_Orders",
                                     Type: "criteria",
@@ -498,6 +499,28 @@ document.addEventListener('DOMContentLoaded', function () {
                                     }
 
                                 });
+                                */
+
+                                const myUrl = "/get-invoiced";
+                                const data2s = {
+                                    id: dataZ[j].Jobsheet.id,
+                                };
+
+                                fetch(myUrl, {
+                                    method: 'POST',
+                                    body: JSON.stringify(data2s),
+                                    headers: {
+                                        Accept: "application/json",
+                                        "Content-Type": "application/json; charset=UTF-8",
+                                        // Authorization: 'Bearer 2|2j2cjvH0tC48fjU4aMk4d7iFfBDeEzULjgyy0YNe'
+                                    }
+                                })
+                                    .then(response => response.json())
+                                    .then(dataZC => {
+                                        console.log(dataZC);
+                                    });
+
+
                             }
 
                             // list of jobsheet
