@@ -506,7 +506,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     id: dataZ[j].Jobsheet.id,
                                 };
 
-                                const obj = await fetch(myUrl, {
+                                await fetch(myUrl, {
                                     method: 'POST',
                                     body: JSON.stringify(data2s),
                                     headers: {
@@ -540,14 +540,15 @@ document.addEventListener('DOMContentLoaded', function () {
                                             });
                                         }
 
+                                        let vendor_object = {};
+                                        vendor_object.id = dataZC.id;
+                                        vendor_object.title = dataZC?.Subject;
+                                        vendor_object.start = dataZC?.Start_Date;
+                                        vendor_object.end = dataZC?.End_Date;
+                                        jobsheet_list.push(vendor_object);
+
                                     });
-                                const dataZC = await obj.json();
-                                let vendor_object = {};
-                                vendor_object.id = dataZC[0].id;
-                                vendor_object.title = dataZC[0]?.Subject;
-                                vendor_object.start = dataZC[0]?.Start_Date;
-                                vendor_object.end = dataZC[0]?.End_Date;
-                                jobsheet_list.push(vendor_object);
+
                             }
 
                             // list of jobsheet
