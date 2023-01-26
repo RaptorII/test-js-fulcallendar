@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // initialDate: '2022-08-07',
         selectable: true,
         editable: true,
-        // allDay:  false,
+        eventColor: 'blue',
         nextDayThreshold: '00:00:00',
         headerToolbar: {
             left: 'prev,next today',
