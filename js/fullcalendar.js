@@ -527,7 +527,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 end: dataZC?.End_Date,
                                                 editable: false,
                                                 description: dataZC?.Subject,
-                                                eventColor: '#378006'
+                                                color: '#378006'
                                             });
                                         } else {
                                             calendar.addEvent({
