@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             dateFormat: 'YYYY-MM-DD'
         }); */
 
-    let mcPStart = document.getElementById('jse__datestart');
+    /*let mcPStart = document.getElementById('jse__datestart');
     let mcPStartP =  MCDatepicker.create({
         el: '#jse__datestart',
         bodyType: 'inline',
@@ -36,17 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dateFormat: 'YYYY-MM-DD',
     }).onOpen( function() {
         console.log('open start date');
-        console.log('date_v = ' + mcPStart.value);
-        // console.log('date = ' + new Date(mcPStart.value));
-        // mcPStartP.setFullDate( new Date(mcPStart.value));
-
-        mcPStartP.setFullDate(mcPStart.value);
         // mcPStart.value ? mcPStartP.setDate( new Date(mcPStart.value) ) : mcPStartP.setDate( new Date() );
-
-
-
-
-
     });
     let mcPEnd = document.getElementById('jse__dateend');
     let mcPEndP = MCDatepicker.create({
@@ -57,7 +47,50 @@ document.addEventListener('DOMContentLoaded', function () {
     }).onOpen( function() {
         // mcPEndP.options.selectedDate = mcPEnd.value ? new Date(mcPEnd.value) : new Date();
         // mcPEnd.value ? mcPEndP.setDate( new Date(mcPEnd.value) ) : mcPEndP.setDate( new Date() );
-    });
+    });*/
+
+
+    let mcPStart = document.getElementById('jse__datestart');
+    let mcPEnd = document.getElementById('jse__dateend');
+    let curDateS = mcPStart.value;
+    let curDateE = mcPEnd.value;
+
+    let optionsDPS = {
+        formatter: (input, date, instance) => {
+            input.value = date.toLocaleDateString('en-CA');
+        },
+        position: 'br',
+        onShow: instance => {
+            if(curDateS) {
+                instance.setDate(new Date(curDateS), true);
+            }
+        },
+        onSelect: (instance, date) => {
+            console.log(date);
+
+
+        }
+    };
+    let optionsDPE = {
+        formatter: (input, date, instance) => {
+            input.value = date.toLocaleDateString('en-CA');
+        },
+        position: 'br',
+        onShow: instance => {
+            if(curDateE) {
+                instance.setDate(new Date(curDateE), true);
+            }
+        },
+        onSelect: (instance, date) => {
+            console.log(date);
+
+
+        }
+    };
+
+    datepicker(mcPStart, optionsDPS);
+    datepicker(mcPEnd, optionsDPE);
+
 
     // calendar
     let calendarEl = document.getElementById('calendar');

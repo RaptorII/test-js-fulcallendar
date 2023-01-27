@@ -15,8 +15,8 @@
     <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
 
     <link href='css/main.css' rel='stylesheet' />
-    <link href='css/mc-calendar.min.css' rel='stylesheet' />
-<!--    <link href='css/datepicker.min.css' rel='stylesheet' />-->
+<!--    <link href='css/mc-calendar.min.css' rel='stylesheet' />-->
+    <link href='css/datepicker.min.css' rel='stylesheet' />
 
 </head>
 <body id="body-id">
@@ -38,11 +38,11 @@
                 <input type="text" id="jse__data" style="display: none">
                 <div class="jobsheet__box">
                     <label for="jse__datestart"> Start Date </label>
-                    <input type="text" id="jse__datestart">
+                    <input type="text" id="jse__datestart" autocomplete="off">
                 </div>
                 <div class="jobsheet__box">
                     <label for="jse__dateend"> End Date </label>
-                    <input type="text" id="jse__dateend">
+                    <input type="text" id="jse__dateend" autocomplete="off">
                 </div>
                 <div class="jobsheet__box">
                     <button id="jse__btn--ok"> Ok </button>
@@ -95,7 +95,8 @@
 <!--  scripts  -->
 <script src="https://live.zwidgets.com/js-sdk/1.1/ZohoEmbededAppSDK.min.js"></script>
 <script src='js/main.js'></script>
-<script src='js/mc-calendar.min.js'></script>
+<!--<script src='js/mc-calendar.min.js'></script>-->
+<script src='js/datepicker.min.js'></script>
 <script src='js/fullcalendar.js'></script>
 
 </body>
