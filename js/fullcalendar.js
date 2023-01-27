@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let mcPStart = document.getElementById('jse__datestart');
     let mcPEnd = document.getElementById('jse__dateend');
-    let curDateS = mcPStart.value;
-    let curDateE = mcPEnd.value;
+
+
 
     let optionsDPS = {
         formatter: (input, date, instance) => {
@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         position: 'br',
         onShow: instance => {
+            let curDateS = mcPStart.value;
             if(curDateS) {
                 instance.setDate(new Date(curDateS), true);
             }
@@ -77,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         position: 'br',
         onShow: instance => {
+            let curDateE = mcPEnd.value;
             if(curDateE) {
                 instance.setDate(new Date(curDateE), true);
             }
