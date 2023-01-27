@@ -527,7 +527,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 end: dataZC?.End_Date,
                                                 editable: false,
                                                 description: dataZC?.Subject,
-                                                eventColor: 'purple'
+                                                color: 'purple'
                                             });
                                         } else {
                                             calendar.addEvent({
@@ -540,14 +540,14 @@ document.addEventListener('DOMContentLoaded', function () {
                                             });
                                         }
 
-                                        if(dataZC?.Start_Date ==='null' || dataZC?.End_Date === 'null') {
+                                        // if(dataZC?.Start_Date ==='null' || dataZC?.End_Date === 'null') {
                                             let vendor_object = {};
                                             vendor_object.id = dataZC.id;
                                             vendor_object.title = dataZC?.Subject;
                                             vendor_object.start = dataZC?.Start_Date;
                                             vendor_object.end = dataZC?.End_Date;
                                             jobsheet_list.push(vendor_object);
-                                        }
+                                        // }
 
                                     });
 
