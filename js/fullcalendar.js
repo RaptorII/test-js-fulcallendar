@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
         closeOnBlur: true,
         dateFormat: 'YYYY-MM-DD',
     }).onOpen( function() {
+        console.log('open start date');
+        mcPStartP.setDate( new Date(mcPStart.value));
         // mcPStart.value ? mcPStartP.setDate( new Date(mcPStart.value) ) : mcPStartP.setDate( new Date() );
     });
     let mcPEnd = document.getElementById('jse__dateend');
