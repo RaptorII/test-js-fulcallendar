@@ -37,8 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }).onOpen( function() {
         console.log('open start date');
         console.log('date_v = ' + mcPStart.value);
-        console.log('date = ' + new Date(mcPStart.value));
-        mcPStartP.setFullDate( new Date(mcPStart.value));
+        // console.log('date = ' + new Date(mcPStart.value));
+        // mcPStartP.setFullDate( new Date(mcPStart.value));
+
+        mcPStartP.setFullDate(mcPStart.value);
         // mcPStart.value ? mcPStartP.setDate( new Date(mcPStart.value) ) : mcPStartP.setDate( new Date() );
 
 
