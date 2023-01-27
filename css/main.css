@@ -1722,4 +1722,15 @@ label[for=event__name] {
 .loaded .preloader {
     display: none;
 }
+
+#preloader_ind {
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #1a252f;
+    width: 100%;
+}
 /**/

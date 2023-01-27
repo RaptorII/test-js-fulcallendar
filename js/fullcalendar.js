@@ -51,10 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     let mcPStart = document.getElementById('jse__datestart');
-    let mcPEnd = document.getElementById('jse__dateend');
-
-
-
     let optionsDPS = {
         formatter: (input, date, instance) => {
             input.value = date.toLocaleDateString('en-CA');
@@ -68,10 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         onSelect: (instance, date) => {
             console.log(date);
-
-
         }
     };
+    let mcPEnd = document.getElementById('jse__dateend');
     let optionsDPE = {
         formatter: (input, date, instance) => {
             input.value = date.toLocaleDateString('en-CA');
@@ -85,11 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         onSelect: (instance, date) => {
             console.log(date);
-
-
         }
     };
-
     datepicker(mcPStart, optionsDPS);
     datepicker(mcPEnd, optionsDPE);
 
